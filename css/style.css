@@ -362,8 +362,8 @@ nav.s .ham span {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 48% 45%, rgba(10, 6, 2, 0.15) 0%, rgba(10, 6, 2, 0.55) 40%, rgba(10, 6, 2, 0.85) 75%, rgba(10, 6, 2, 0.95) 100%),
-    linear-gradient(135deg, rgba(12, 9, 6, .95) 0%, rgba(12, 9, 6, .7) 45%, rgba(12, 9, 6, .45) 70%, rgba(12, 9, 6, .23) 100%);
+    radial-gradient(circle at 48% 45%, rgba(10, 6, 2, 0.08) 0%, rgba(10, 6, 2, 0.28) 40%, rgba(10, 6, 2, 0.45) 75%, rgba(10, 6, 2, 0.52) 100%),
+    linear-gradient(135deg, rgba(12, 9, 6, .55) 0%, rgba(12, 9, 6, .38) 45%, rgba(12, 9, 6, .22) 70%, rgba(12, 9, 6, .1) 100%);
 }
 
 .hvb-overlay-vignette {
@@ -371,8 +371,8 @@ nav.s .ham span {
   inset: 0;
   background: radial-gradient(ellipse at center,
       transparent 35%,
-      rgba(12, 9, 6, .55) 60%,
-      rgba(12, 9, 6, .82) 100%);
+      rgba(12, 9, 6, .28) 60%,
+      rgba(12, 9, 6, .45) 100%);
 }
 
 .hvb-overlay-scanlines {
