@@ -404,6 +404,7 @@ nav.s .ham span {
   max-width: 660px;
 }
 
+
 .hero-tag {
   font-size: 1rem;
   margin-bottom: 28px;
@@ -496,7 +497,6 @@ nav.s .ham span {
   transform: translateY(-3px);
 
 }
-
 /* Vertical side label */
 .hero-side-text {
   position: absolute;
@@ -738,7 +738,6 @@ section h2 em {
 
 .asb-item strong {
   display: block;
-  font-family: var(--serif);
   font-size: 2rem;
   color: var(--gold-light);
 }
@@ -818,6 +817,7 @@ section h2 em {
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 8px;
+  font-weight: bold;
 }
 
 .ms-pill p {
@@ -943,7 +943,6 @@ section h2 em {
 }
 
 .tcard-foot strong {
-  font-family: var(--garamond);
   font-size: 1.3rem;
   color: var(--gold);
 }
@@ -1128,7 +1127,6 @@ img.we-badge-logo {
 }
 
 .prow strong {
-  font-family: var(--garamond);
   font-size: 1.32rem;
   color: var(--gold-light);
   font-weight: 400;
@@ -1217,7 +1215,6 @@ img.we-badge-logo {
 }
 
 .mc-item .mc-num {
-  font-family: var(--serif);
   font-size: 2.2rem;
   color: var(--gold-light);
   display: block;
