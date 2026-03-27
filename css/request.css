@@ -1037,9 +1037,7 @@
       cursor: pointer;
     }
 
-    .cm-treat-sub-option:last-child {
-    }
-
+  
     .cm-treat-sub-option input {
       position: absolute;
       top: 0;
