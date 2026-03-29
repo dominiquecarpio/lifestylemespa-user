@@ -35,3 +35,46 @@
       cycle();
       setInterval(cycle, 7000);
     })();
+
+    // Custom cursor
+    document.addEventListener('mousemove', (e) => {
+      const cur = document.getElementById('cur');
+      const ring = document.getElementById('ring');
+      if (cur && ring) {
+        cur.style.left = e.clientX + 'px';
+        cur.style.top = e.clientY + 'px';
+        ring.style.left = e.clientX + 'px';
+        ring.style.top = e.clientY + 'px';
+      }
+    });
+
+    document.addEventListener('mouseenter', () => {
+      const cur = document.getElementById('cur');
+      const ring = document.getElementById('ring');
+      if (cur && ring) {
+        cur.style.display = 'block';
+        ring.style.display = 'block';
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      const cur = document.getElementById('cur');
+      const ring = document.getElementById('ring');
+      if (cur && ring) {
+        cur.style.display = 'none';
+        ring.style.display = 'none';
+      }
+    });
+
+    // Hover effect
+    document.addEventListener('mouseover', (e) => {
+      const cur = document.getElementById('cur');
+      const ring = document.getElementById('ring');
+      if (e.target.closest('a, button, [role="button"]')) {
+        if (cur) cur.classList.add('h');
+        if (ring) ring.classList.add('h');
+      } else {
+        if (cur) cur.classList.remove('h');
+        if (ring) ring.classList.remove('h');
+      }
+    });

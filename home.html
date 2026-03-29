@@ -70,16 +70,14 @@
     <div class="hero-content">
       <div class="hero-tag">
         <span class="htag-dot"></span>
-        European Expertise · Advanced Training · Precision Aesthetic Medicine
+        European Expertise · Educator & Trainer · Correction Specialist · Precision Aesthetic Medicine
       </div>
       <h1 class="hero-h1">
         <span class="hero-h1-line" data-line="1">Excellence in</span>
         <span class="hero-h1-line hero-h1-em" data-line="2"><em>Aesthetic</em></span>
         <span class="hero-h1-line hero-h1-em" data-line="3"><em>Medicine</em></span>
       </h1>
-      <p class="hero-sub">At lifestyle Medical Spa, excellence begins with continuous education and international
-        expertise. Our lead practitioner is not only a highly experienced aesthetic specialist but also an educator and
-        trainer in Europe — combining scientific precision with artistic understanding of facial anatomy.</p>
+      <p class="hero-sub">At Lifestyle Medical Spa, excellence begins with continuous education and international expertise. Our lead practitioner is a highly experienced aesthetic specialist, educator, trainer, and correction specialist — combining scientific precision with the passion and artistry of someone who truly considers this her life's work.</p>
       <div class="hero-ctas">
         <a href="#treatments" class="btn-outline-white">Explore Treatments</a>
         <a href="#contact" class="btn-gold-fill">Book Consultation</a>
@@ -141,12 +139,8 @@
     <div class="about-left rev">
       <div class="section-label">About Us</div>
       <h2>Aesthetic Expertise<br>You Can <em>Trust</em></h2>
-      <p>lifestyle Medical Spa is led by Katarzyna Marcinec, an internationally trained aesthetic practitioner known for
-        delivering natural, structured, and refined results. With extensive experience across Europe and the United
-        States, Katarzyna has trained at leading aesthetic institutions and has served as an instructor for aesthetic
-        academies in Europe.</p>
-      <p>Clients trust lifestyle Medical Spa because every treatment is customized to the individual, ensuring safe,
-        effective, and natural-looking outcomes.</p>
+      <p>Lifestyle Medical Spa is led by Katarzyna Marcinec, an internationally trained aesthetic practitioner who has turned her craft into an art form — one she pursues with deep passion and unwavering dedication. Known for delivering natural, structured, and refined results, Katarzyna brings a rare combination of technical mastery and artistic sensitivity to every face she works with.</p>
+      <p>Beyond her clinical practice, Katarzyna is an educator and trainer, sharing advanced aesthetic techniques with medical professionals across Europe. She also specializes in corrections — expertly restoring balance and harmony for clients who have experienced unsatisfactory results elsewhere. For Katarzyna, this work is not simply medicine. It is art.</p>
       <div class="about-sig">
         <img src="images/image2.webp" alt="Katarzyna Marcinec" class="sig-photo">
         <div>
@@ -1799,12 +1793,8 @@
     <div class="meet-text-col rev d2">
       <div class="section-label">Your Practitioner</div>
       <h2>Katarzyna<br><em>Marcinec</em></h2>
-      <p>Katarzyna Marcinec is not only a highly experienced aesthetic specialist but also an educator and trainer in
-        Europe, teaching advanced aesthetic techniques to other medical professionals. Through ongoing training,
-        international certifications, and hands-on instruction, she remains deeply connected to the latest innovations
-        in aesthetic medicine.</p>
-      <p>Her expertise includes advanced facial anatomy and muscle mapping, correcting improperly performed treatments,
-        precision neurotoxin injections, and subtle facial contour restoration.</p>
+      <p>Katarzyna Marcinec is not only a highly experienced aesthetic specialist — she is an educator, a trainer, and a corrector. She teaches advanced aesthetic techniques to medical professionals across Europe, shaping the next generation of practitioners with the same precision she brings to every client interaction.</p>
+      <p>What sets Katarzyna apart is her mastery of corrections: expertly resolving complications, asymmetries, and unsatisfactory results from prior treatments. Where others see a difficult case, she sees an opportunity to restore what was lost. For Katarzyna, aesthetic medicine is more than a profession — it is a deeply felt art form, and she approaches every face with the reverence and passion of a true artist.</p>
       <div class="meet-creds">
         <div class="mc-item">
           <div class="mc-num">10+</div>
@@ -1813,6 +1803,10 @@
         <div class="mc-item">
           <div class="mc-num">EU</div>
           <div>Certified Educator & Trainer</div>
+        </div>
+        <div class="mc-item">
+          <div class="mc-num">✦</div>
+          <div>Correction Specialist</div>
         </div>
         <div class="mc-item">
           <div class="mc-num">★</div>
@@ -4288,6 +4282,686 @@
       }
     })();
   </script>
+
+<!-- ═══════════════════════════════════════════════
+     AI CHAT ASSISTANT WIDGET
+═══════════════════════════════════════════════ -->
+<style>
+  /* ── Chat Bubble Trigger ── */
+  #chatBubble {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-dark, #9a7a4a), var(--gold, #c9a96e));
+    border: none;
+    cursor: pointer;
+    z-index: 8000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(201,169,110,.45), 0 0 0 0 rgba(201,169,110,.3);
+    transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
+    animation: chatPulse 3s ease-in-out infinite;
+  }
+  #chatBubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(201,169,110,.6);
+  }
+  #chatBubble svg { pointer-events: none; }
+  #chatBubble .chat-badge {
+    position: absolute;
+    top: -3px; right: -3px;
+    width: 18px; height: 18px;
+    background: #c0392b;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    border: 2px solid #000;
+  }
+  @keyframes chatPulse {
+    0%,100% { box-shadow: 0 8px 32px rgba(201,169,110,.45), 0 0 0 0 rgba(201,169,110,.3); }
+    50% { box-shadow: 0 8px 32px rgba(201,169,110,.45), 0 0 0 10px rgba(201,169,110,0); }
+  }
+
+  /* ── Chat Panel ── */
+  #chatPanel {
+    position: fixed;
+    bottom: 108px;
+    right: 32px;
+    width: 380px;
+    max-height: 560px;
+    background: #0d0d0d;
+    border: 1px solid rgba(201,169,110,.25);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    z-index: 8001;
+    opacity: 0;
+    transform: translateY(20px) scale(.97);
+    pointer-events: none;
+    transition: opacity .3s cubic-bezier(.4,0,.2,1), transform .3s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 24px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(201,169,110,.08);
+  }
+  #chatPanel.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+
+  /* Chat Header */
+  .chat-header {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(154,122,74,.18), rgba(201,169,110,.08));
+    border-bottom: 1px solid rgba(201,169,110,.18);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 4px 4px 0 0;
+  }
+  .chat-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-dark,#9a7a4a), var(--gold,#c9a96e));
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+  .chat-header-info { flex: 1; min-width: 0; }
+  .chat-header-name {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gold, #c9a96e);
+    text-transform: uppercase;
+  }
+  .chat-header-status {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,.45);
+    display: flex; align-items: center; gap: 5px; margin-top: 2px;
+  }
+  .chat-status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #5a9e78;
+    animation: statusBlink 2.5s ease-in-out infinite;
+  }
+  @keyframes statusBlink {
+    0%,100% { opacity: 1; } 50% { opacity: .4; }
+  }
+  .chat-close-btn {
+    background: none;
+    border: 1px solid rgba(201,169,110,.2);
+    color: rgba(255,255,255,.5);
+    width: 28px; height: 28px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s;
+    flex-shrink: 0;
+  }
+  .chat-close-btn:hover { border-color: var(--gold,#c9a96e); color: var(--gold,#c9a96e); }
+
+  /* Messages */
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scroll-behavior: smooth;
+  }
+  .chat-messages::-webkit-scrollbar { width: 3px; }
+  .chat-messages::-webkit-scrollbar-track { background: transparent; }
+  .chat-messages::-webkit-scrollbar-thumb { background: rgba(201,169,110,.3); border-radius: 2px; }
+
+  .chat-msg {
+    display: flex;
+    gap: 8px;
+    animation: msgIn .3s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes msgIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .chat-msg.user { flex-direction: row-reverse; }
+  .chat-msg-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .chat-msg.bot .chat-msg-avatar {
+    background: linear-gradient(135deg, rgba(154,122,74,.4), rgba(201,169,110,.2));
+    border: 1px solid rgba(201,169,110,.25);
+  }
+  .chat-msg.user .chat-msg-avatar {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    font-size: 11px;
+    color: rgba(255,255,255,.6);
+  }
+  .chat-bubble {
+    max-width: 78%;
+    padding: 10px 14px;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .chat-msg.bot .chat-bubble {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(201,169,110,.15);
+    color: rgba(255,255,255,.85);
+    border-radius: 0 2px 2px 2px;
+  }
+  .chat-msg.user .chat-bubble {
+    background: linear-gradient(135deg, rgba(154,122,74,.3), rgba(201,169,110,.15));
+    border: 1px solid rgba(201,169,110,.3);
+    color: rgba(255,255,255,.9);
+    border-radius: 2px 0 2px 2px;
+  }
+  .chat-bubble-time {
+    font-size: 10px;
+    color: rgba(255,255,255,.28);
+    margin-top: 4px;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: .3px;
+  }
+  .chat-msg.user .chat-bubble-time { text-align: right; }
+
+  /* Typing indicator */
+  .chat-typing {
+    display: flex; gap: 4px; align-items: center;
+    padding: 12px 14px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(201,169,110,.15);
+    border-radius: 0 2px 2px 2px;
+    width: fit-content;
+  }
+  .chat-typing span {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(201,169,110,.6);
+    animation: typingDot .9s ease-in-out infinite;
+  }
+  .chat-typing span:nth-child(2) { animation-delay: .18s; }
+  .chat-typing span:nth-child(3) { animation-delay: .36s; }
+  @keyframes typingDot {
+    0%,80%,100% { transform: scale(.7); opacity: .4; }
+    40% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Quick suggestions */
+  .chat-suggestions {
+    padding: 0 16px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chat-suggestion-btn {
+    background: none;
+    border: 1px solid rgba(201,169,110,.3);
+    color: rgba(201,169,110,.85);
+    padding: 5px 12px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: .5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .chat-suggestion-btn:hover {
+    background: rgba(201,169,110,.12);
+    border-color: var(--gold,#c9a96e);
+    color: var(--gold,#c9a96e);
+  }
+
+  /* Input area */
+  .chat-input-area {
+    padding: 12px 16px 16px;
+    border-top: 1px solid rgba(201,169,110,.12);
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .chat-input {
+    flex: 1;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(201,169,110,.2);
+    border-radius: 2px;
+    color: rgba(255,255,255,.9);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    padding: 10px 14px;
+    resize: none;
+    outline: none;
+    min-height: 40px;
+    max-height: 100px;
+    line-height: 1.5;
+    transition: border-color .2s;
+  }
+  .chat-input:focus { border-color: rgba(201,169,110,.5); }
+  .chat-input::placeholder { color: rgba(255,255,255,.28); }
+  .chat-send-btn {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--gold-dark,#9a7a4a), var(--gold,#c9a96e));
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all .2s;
+    color: #000;
+  }
+  .chat-send-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,169,110,.35); }
+  .chat-send-btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+  /* Book CTA inside chat */
+  .chat-book-cta {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 7px 16px;
+    background: linear-gradient(135deg, rgba(154,122,74,.3), rgba(201,169,110,.2));
+    border: 1px solid rgba(201,169,110,.45);
+    color: var(--gold,#c9a96e);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .chat-book-cta:hover { background: rgba(201,169,110,.25); }
+
+  @media (max-width: 480px) {
+    #chatPanel { width: calc(100vw - 24px); right: 12px; bottom: 100px; }
+    #chatBubble { bottom: 24px; right: 16px; }
+  }
+</style>
+
+<!-- Trigger bubble -->
+<button id="chatBubble" onclick="toggleChat()" aria-label="Open chat assistant">
+  <div class="chat-badge" id="chatBadge">1</div>
+  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+    <path d="M13 2C7.477 2 3 6.253 3 11.5c0 2.63 1.09 5.01 2.855 6.74L5 22l4.3-1.715A10.3 10.3 0 0013 21c5.523 0 10-4.253 10-9.5S18.523 2 13 2z" fill="rgba(0,0,0,.7)" stroke="rgba(0,0,0,.3)" stroke-width=".5"/>
+    <circle cx="9" cy="11.5" r="1.3" fill="#c9a96e"/>
+    <circle cx="13" cy="11.5" r="1.3" fill="#c9a96e"/>
+    <circle cx="17" cy="11.5" r="1.3" fill="#c9a96e"/>
+  </svg>
+</button>
+
+<!-- Chat panel -->
+<div id="chatPanel" role="dialog" aria-label="Chat with Lifestyle Assistant">
+  <div class="chat-header">
+    <div class="chat-avatar">✦</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Lifestyle Assistant</div>
+      <div class="chat-header-status">
+        <div class="chat-status-dot"></div>
+        Online — typically replies instantly
+      </div>
+    </div>
+    <button class="chat-close-btn" onclick="toggleChat()" aria-label="Close chat">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <line x1="1" y1="1" x2="11" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="11" y1="1" x2="1" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="chat-messages" id="chatMessages"></div>
+
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button class="chat-suggestion-btn" onclick="sendSuggestion(this)">What treatments do you offer?</button>
+    <button class="chat-suggestion-btn" onclick="sendSuggestion(this)">What are your prices?</button>
+    <button class="chat-suggestion-btn" onclick="sendSuggestion(this)">Do you do corrections?</button>
+    <button class="chat-suggestion-btn" onclick="sendSuggestion(this)">How do I book?</button>
+  </div>
+
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chatInput" placeholder="Ask about treatments, pricing, or booking…" rows="1"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat();}"
+      oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'"></textarea>
+    <button class="chat-send-btn" id="chatSendBtn" onclick="sendChat()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M14 8L2 2l3 6-3 6 12-6z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const SUPABASE_URL_CHAT = 'https://eoczzktmlowyzmappjkr.supabase.co';
+  const SUPABASE_ANON_KEY_CHAT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVvY3p6a3RtbG93eXptYXBwamtyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5ODY2MTcsImV4cCI6MjA4OTU2MjYxN30.e_gxOBuzlMSZtSBQuYyfeP0FK-tjpDbeGsMeWgM4dC4';
+
+  // ── Session management ──────────────────────────────────
+  let sessionId = sessionStorage.getItem('lms_chat_session');
+  if (!sessionId) {
+    sessionId = crypto.randomUUID();
+    sessionStorage.setItem('lms_chat_session', sessionId);
+  }
+  let visitorName = sessionStorage.getItem('lms_chat_name') || null;
+
+  let chatOpen = false;
+  let chatHistory = [];
+  let chatInitialized = false;
+  let _chatSupabase = null;
+
+  // Init Supabase for chat (reuse global if available, else create)
+  try {
+    _chatSupabase = window._supabase || window.supabase.createClient(SUPABASE_URL_CHAT, SUPABASE_ANON_KEY_CHAT);
+  } catch(e) { _chatSupabase = null; }
+
+  const SYSTEM_PROMPT = `You are the Lifestyle Medical Spa assistant — a warm, knowledgeable, and refined virtual concierge for Lifestyle Medical Spa in the Detroit Metro Area.
+
+The spa is led by Katarzyna Marcinec, an internationally trained aesthetic practitioner, educator, trainer, and correction specialist. She holds European certifications and has over 10 years of experience. For Katarzyna, aesthetic medicine is not just a profession — it is an art form she pursues with deep passion.
+
+Her specialties include:
+- Corrections: expertly resolving complications, asymmetries, and prior unsatisfactory treatments
+- Educator & Trainer: teaches advanced aesthetic techniques to medical professionals in Europe
+- Precision injections with European protocols
+
+TREATMENTS & PRICING:
+- Botox: Full Forehead (2 areas) from $300 | 3 Areas (Forehead + Eyes) from $400
+- Lip Flip: $110 | Lip Augmentation via Fillers: from $400
+- Facial Volumetry: Belotero $420, Juvederm $400, Restylane $400, Radiesse $450, Sculptra $500, Skinvive $300
+- Mesotherapy Face: $250 | Face, Neck & Décolleté: $400
+- Dermal Fillers (Premium): $400–$500 | Dissolve Filler: from $150
+- Biostimulators: Hair Restoration $300 | Bio Stimulator Face Rejuran $400 | Under Eyes Rejuran $300
+- Multi-syringe discounts available
+
+TONE: Elegant, warm, and professional. Never overly chatty. Keep responses concise — 2–4 sentences unless a detailed list is needed. End relevant replies with a soft call-to-action encouraging booking a consultation.
+
+IMPORTANT: Never give medical advice. If asked about medical suitability, redirect them to book a consultation. If asked about pricing always state "starting from" and note it varies by individual plan.
+
+If you learn the visitor's name during conversation, address them personally. Always stay in character as a refined luxury spa assistant. If asked something outside your knowledge, politely suggest they contact the spa directly at (313) 330-9999.`;
+
+  // ── Save message to Supabase ────────────────────────────
+  async function saveMessage(role, content) {
+    if (!_chatSupabase) return;
+    try {
+      await _chatSupabase.from('chat_messages').insert([{
+        session_id: sessionId,
+        role,
+        content,
+        visitor_name: visitorName || null,
+        created_at: new Date().toISOString()
+      }]);
+    } catch(e) {
+      // silent — don't block UI if Supabase save fails
+    }
+  }
+
+  // ── Check for admin reply for this session ──────────────
+  async function checkAdminReply() {
+    if (!_chatSupabase) return;
+    try {
+      const { data } = await _chatSupabase
+        .from('chat_messages')
+        .select('content, created_at')
+        .eq('session_id', sessionId)
+        .eq('role', 'admin')
+        .eq('read_by_client', false)
+        .order('created_at', { ascending: true });
+
+      if (data && data.length > 0) {
+        for (const msg of data) {
+          addAdminMessage(msg.content, msg.created_at);
+          chatHistory.push({ role: 'assistant', content: msg.content });
+        }
+        // Mark as read
+        await _chatSupabase
+          .from('chat_messages')
+          .update({ read_by_client: true })
+          .eq('session_id', sessionId)
+          .eq('role', 'admin');
+      }
+    } catch(e) {}
+  }
+
+  // Poll for admin replies every 20 seconds while chat is open
+  let adminPollInterval = null;
+
+  // ── Toggle chat panel ──────────────────────────────────
+  window.toggleChat = function() {
+    chatOpen = !chatOpen;
+    document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+    document.getElementById('chatBadge').style.display = 'none';
+
+    if (chatOpen && !chatInitialized) {
+      chatInitialized = true;
+      const greeting = "Welcome to Lifestyle Medical Spa. I'm here to help you explore our treatments, learn about Katarzyna's expertise, or guide you toward booking a consultation. How may I assist you today?";
+      setTimeout(() => {
+        addBotMessage(greeting);
+        saveMessage('assistant', greeting);
+      }, 400);
+    }
+
+    if (chatOpen) {
+      document.getElementById('chatSuggestions').style.display = 'flex';
+      setTimeout(() => document.getElementById('chatInput').focus(), 350);
+      checkAdminReply();
+      adminPollInterval = setInterval(checkAdminReply, 20000);
+    } else {
+      if (adminPollInterval) { clearInterval(adminPollInterval); adminPollInterval = null; }
+    }
+  };
+
+  window.sendSuggestion = function(btn) {
+    const text = btn.textContent.trim();
+    processUserMessage(text, true);
+  };
+
+  window.sendChat = function() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    input.style.height = 'auto';
+    processUserMessage(text, false);
+  };
+
+  async function generateAdminReply(userMessage) {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 500,
+        system: `You are Katarzyna Marcinec, the owner of Lifestyle Medical Spa. Respond warmly and personally to the visitor's question/suggestion. Your response should be brief (2-3 sentences), relate directly to what they asked, and include a personal touch. Start with "I'll be reaching out to you shortly—" and mention something specific about their inquiry.`,
+        messages: [{ role: 'user', content: userMessage }]
+      })
+    });
+    const data = await res.json();
+    const textBlock = (data.content || []).find(b => b.type === 'text');
+    return textBlock ? textBlock.text : "I'll be reaching out to you shortly with personalized information. In the meantime, feel free to explore our services or book a consultation!";
+  }
+
+  function processUserMessage(text, isSuggestion = false) {
+    // Try to detect visitor name from message (e.g. "My name is Sarah")
+    const nameMatch = text.match(/(?:my name is|i(?:'m| am)|call me)\s+([A-Z][a-z]+)/i);
+    if (nameMatch && !visitorName) {
+      visitorName = nameMatch[1];
+      sessionStorage.setItem('lms_chat_name', visitorName);
+    }
+
+    addUserMessage(text);
+    saveMessage('user', text);
+    chatHistory.push({ role: 'user', content: text });
+    
+    // Check for specific question about treatments
+    const treatmentsQuestion = /what treatments.*offer|what.*treatment.*available|treatment.*options/i.test(text);
+    
+    if (treatmentsQuestion && isSuggestion) {
+      // Custom response for "What treatments do you offer?" question
+      const treatmentReply = "We offer Botox, Dermal Fillers, Lip Augmentation, Facial Volumetry, Biostimulators, Mesotherapy, and specialized Hair Restoration — all performed with European precision techniques. " +
+        "Each treatment is tailored to your unique goals and facial anatomy.";
+      
+      // Show the custom treatment response
+      setTimeout(() => {
+        addBotMessage(treatmentReply);
+        chatHistory.push({ role: 'assistant', content: treatmentReply });
+        saveMessage('assistant', treatmentReply);
+      }, 400);
+      
+      // Then show Katarzyna's personal reaching out message
+      const adminReply = "Wait—Katarzyna is reaching out to you soon! In the meantime, for more details and recommendations, feel free to explore our services or book a consultation.";
+      setTimeout(() => {
+        addAdminMessage(adminReply, new Date().toISOString());
+        chatHistory.push({ role: 'assistant', content: adminReply });
+        saveMessage('assistant', adminReply);
+      }, 1200);
+    } else if (isSuggestion) {
+      // For other suggestions: get AI response first, then show admin message
+      showTyping();
+      document.getElementById('chatSendBtn').disabled = true;
+
+      callClaudeAPI(chatHistory).then(reply => {
+        removeTyping();
+        if (reply) {
+          chatHistory.push({ role: 'assistant', content: reply });
+          addBotMessage(reply);
+          saveMessage('assistant', reply);
+        }
+        
+        // After AI response, generate and show contextual admin message
+        generateAdminReply(text).then(adminReply => {
+          setTimeout(() => {
+            addAdminMessage(adminReply, new Date().toISOString());
+            chatHistory.push({ role: 'assistant', content: adminReply });
+            saveMessage('assistant', adminReply);
+            document.getElementById('chatSendBtn').disabled = false;
+          }, 600);
+        }).catch(() => {
+          document.getElementById('chatSendBtn').disabled = false;
+        });
+      }).catch(() => {
+        removeTyping();
+        document.getElementById('chatSendBtn').disabled = false;
+        generateAdminReply(text).then(adminReply => {
+          addAdminMessage(adminReply, new Date().toISOString());
+          saveMessage('assistant', adminReply);
+        });
+      });
+    } else {
+      // For custom messages: generate contextual admin reaching out message
+      generateAdminReply(text).then(adminReply => {
+        setTimeout(() => {
+          addAdminMessage(adminReply, new Date().toISOString());
+          chatHistory.push({ role: 'assistant', content: adminReply });
+          saveMessage('assistant', adminReply);
+        }, 800);
+      });
+    }
+  }
+
+  async function callClaudeAPI(history) {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEM_PROMPT,
+        messages: history
+      })
+    });
+    const data = await res.json();
+    const textBlock = (data.content || []).find(b => b.type === 'text');
+    return textBlock ? textBlock.text : null;
+  }
+
+  function addUserMessage(text) {
+    appendMessage('user', text, '👤');
+  }
+
+  function addBotMessage(text) {
+    const formatted = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>');
+    const hasCTA = /book|consult|appointment|schedule/i.test(text);
+    const extra = hasCTA
+      ? `<br><button class="chat-book-cta" onclick="openConsultModal();toggleChat()">Book a Consultation ✦</button>`
+      : '';
+    appendMessage('bot', formatted + extra, '✦', true);
+  }
+
+  function addAdminMessage(text, timestamp) {
+    // Admin reply shown with special styling — Katarzyna responding personally
+    const msgs = document.getElementById('chatMessages');
+    const time = timestamp
+      ? new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    const div = document.createElement('div');
+    div.className = 'chat-msg bot';
+    div.style.animation = 'msgIn .4s cubic-bezier(.34,1.56,.64,1)';
+    div.innerHTML = `
+      <div class="chat-msg-avatar" style="background:linear-gradient(135deg,rgba(201,169,110,.5),rgba(201,169,110,.2));border:1px solid rgba(201,169,110,.5);font-size:12px;">K</div>
+      <div>
+        <div style="font-size:9px;letter-spacing:1.5px;color:var(--gold,#c9a96e);margin-bottom:4px;font-family:'Jost',sans-serif;text-transform:uppercase;">Katarzyna · Lifestyle Medical Spa</div>
+        <div class="chat-bubble" style="border-color:rgba(201,169,110,.3);background:rgba(201,169,110,.06);">${escChat(text)}</div>
+        <div class="chat-bubble-time">${time}</div>
+      </div>`;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+
+    // Show notification toast if chat is not open
+    if (!chatOpen) {
+      document.getElementById('chatBadge').style.display = 'flex';
+      document.getElementById('chatBadge').textContent = '!';
+    }
+  }
+
+  function appendMessage(type, content, avatar, isHTML = false) {
+    const msgs = document.getElementById('chatMessages');
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const div = document.createElement('div');
+    div.className = `chat-msg ${type}`;
+    div.innerHTML = `
+      <div class="chat-msg-avatar">${avatar}</div>
+      <div>
+        <div class="chat-bubble">${isHTML ? content : escChat(content)}</div>
+        <div class="chat-bubble-time">${time}</div>
+      </div>`;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  let typingEl = null;
+  function showTyping() {
+    const msgs = document.getElementById('chatMessages');
+    const wrap = document.createElement('div');
+    wrap.className = 'chat-msg bot';
+    wrap.id = 'chatTypingWrap';
+    wrap.innerHTML = `<div class="chat-msg-avatar">✦</div><div class="chat-typing"><span></span><span></span><span></span></div>`;
+    msgs.appendChild(wrap);
+    msgs.scrollTop = msgs.scrollHeight;
+    typingEl = wrap;
+  }
+  function removeTyping() {
+    if (typingEl) { typingEl.remove(); typingEl = null; }
+  }
+
+  function escChat(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+})();
+</script>
 
 </body>
 
