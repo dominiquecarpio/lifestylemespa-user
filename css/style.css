@@ -137,6 +137,8 @@ nav.s {
   transition: color .4s;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .logo em {
@@ -155,16 +157,19 @@ nav.s .logo em {
 .nav-r {
   display: flex;
   align-items: center;
-  gap: 3rem
+  gap: 3rem;
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.3rem;
   list-style: none;
   font-size: .90rem;
   letter-spacing: .22em;
   text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-links a {
@@ -173,6 +178,7 @@ nav.s .logo em {
   transition: color .3s;
   position: relative;
   padding-bottom: 4px;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -210,6 +216,8 @@ nav.s .nav-links a {
   text-decoration: none;
   border: 1px solid rgba(158, 125, 71, .25);
   transition: all .35s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-book:hover {
@@ -1514,7 +1522,66 @@ footer small {
 }
 
 /* ─── RESPONSIVE ─── */
+
+/* ─── NAVBAR RESPONSIVE ADJUSTMENTS ─── */
+@media (max-width: 1400px) {
+  nav {
+    padding: 20px 4vw;
+  }
+
+  .logo {
+    font-size: 1.50rem;
+    gap: 10px;
+  }
+
+  .nav-r {
+    gap: 1.8rem;
+  }
+
+  .nav-links {
+    gap: 1.8rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-book {
+    font-size: 0.80rem;
+    padding: 8px 18px;
+  }
+}
+
 @media (max-width: 1200px) {
+  nav {
+    padding: 18px 3.5vw;
+  }
+
+  nav.s {
+    padding: 14px 3.5vw;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    gap: 10px;
+  }
+
+  .logo-img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .nav-r {
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.3rem;
+    font-size: 0.70rem;
+  }
+
+  .nav-book {
+    font-size: 0.75rem;
+    padding: 7px 16px;
+  }
+
   .treat-grid {
     grid-template-columns: 1fr 1fr
   }
@@ -1525,6 +1592,38 @@ footer small {
 }
 
 @media (max-width: 1024px) {
+
+  nav {
+    padding: 13px 3vw;
+  }
+
+  nav.s {
+    padding: 10px 3vw;
+  }
+
+  .logo {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .logo-img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .nav-r {
+    gap: 1.2rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.65rem;
+  }
+
+  .nav-book {
+    font-size: 0.70rem;
+    padding: 6px 14px;
+  }
 
   .about,
   .why-euro {
@@ -1576,6 +1675,28 @@ footer small {
 }
 
 @media (max-width: 768px) {
+
+  nav {
+    padding: 10px 2.5vw;
+  }
+
+  nav.s {
+    padding: 8px 2.5vw;
+  }
+
+  .logo {
+    font-size: 1.9rem;
+  }
+
+  .logo-img {
+    width: 55px !important;
+    height: 55px !important;
+    margin-right: 4px;
+  }
+
+  .nav-r {
+    gap: 0.8rem;
+  }
 
   .nav-links,
   .nav-book {
@@ -2277,6 +2398,22 @@ nav.s img.logo-img {
 }
 
 @media (max-width: 600px) {
+  nav {
+    padding: 8px 2vw;
+  }
+
+  nav.s {
+    padding: 6px 2vw;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+    .logo-img {
+        width: 56px !important;
+        height: 53px !important;
+        margin-right: 3px;
+    }
   .tvm-panel {
     max-height: 100vh;
     border-radius: 0;

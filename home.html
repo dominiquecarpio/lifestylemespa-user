@@ -77,7 +77,7 @@
         <span class="hero-h1-line hero-h1-em" data-line="2"><em>Aesthetic</em></span>
         <span class="hero-h1-line hero-h1-em" data-line="3"><em>Medicine</em></span>
       </h1>
-      <p class="hero-sub">At Lifestyle Medical Spa, excellence begins with continuous education and international
+      <p class="hero-sub">At lifestyle Medical Spa, excellence begins with continuous education and international
         expertise. Our lead practitioner is not only a highly experienced aesthetic specialist but also an educator and
         trainer in Europe — combining scientific precision with artistic understanding of facial anatomy.</p>
       <div class="hero-ctas">
@@ -141,11 +141,11 @@
     <div class="about-left rev">
       <div class="section-label">About Us</div>
       <h2>Aesthetic Expertise<br>You Can <em>Trust</em></h2>
-      <p>Lifestyle Medical Spa is led by Katarzyna Marcinec, an internationally trained aesthetic practitioner known for
+      <p>lifestyle Medical Spa is led by Katarzyna Marcinec, an internationally trained aesthetic practitioner known for
         delivering natural, structured, and refined results. With extensive experience across Europe and the United
         States, Katarzyna has trained at leading aesthetic institutions and has served as an instructor for aesthetic
         academies in Europe.</p>
-      <p>Clients trust Lifestyle Medical Spa because every treatment is customized to the individual, ensuring safe,
+      <p>Clients trust lifestyle Medical Spa because every treatment is customized to the individual, ensuring safe,
         effective, and natural-looking outcomes.</p>
       <div class="about-sig">
         <img src="images/image2.webp" alt="Katarzyna Marcinec" class="sig-photo">
@@ -157,9 +157,9 @@
     </div>
     <div class="about-right rev d2">
       <div class="about-mosaic">
-        <div class="am-large"><img src="images/image6.webp" alt="Aesthetic result"></div>
-        <div class="am-small top"><img src="images/image3.webp" alt="Precision treatment"></div>
-        <div class="am-small bottom"><img src="images/image5.webp" alt="Natural glow"></div>
+        <div class="am-large"><img src="images/image3.webp" alt="Aesthetic result"></div>
+        <div class="am-small top"><img src="images/image22.jpeg" alt="Precision treatment"></div>
+        <div class="am-small bottom"><img src="images/image21.png" alt="Natural glow"></div>
       </div>
       <div class="about-stat-block">
         <div class="asb-item">
@@ -180,7 +180,7 @@
         <video class="ms-slide ms-slide-vid active" autoplay muted loop playsinline>
           <source src="videos/lifestylevideo.mp4" type="video/mp4">
         </video>
-        <img class="ms-slide" src="images/lifestyle3.jpg" alt="Lifestyle">
+        <img class="ms-slide" src="images/image20.png" alt="Lifestyle">
       </div>
     </div>
     <div class="ms-content">
@@ -381,7 +381,7 @@
 
         <!-- Right: Content -->
         <div class="tvm-content-col">
-          <div class="tvm-eyebrow">Lifestyle Medical Spa</div>
+          <div class="tvm-eyebrow">lifestyle Medical Spa</div>
           <h3 id="tvmTitle" class="tvm-title"></h3>
           <div class="tvm-divider">
             <span class="tvm-div-line"></span>
@@ -1044,7 +1044,22 @@
       transition: transform .9s ease, filter .9s ease;
     }
 
+    .we2-m-large video {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: saturate(.85);
+      transition: transform .9s ease, filter .9s ease;
+    }
+
     .we2-mosaic:hover .we2-m-large img {
+      transform: scale(1.03);
+      filter: saturate(1);
+    }
+
+    .we2-mosaic:hover .we2-m-large video {
       transform: scale(1.03);
       filter: saturate(1);
     }
@@ -1366,7 +1381,10 @@
 
       <div class="we2-mosaic rev">
         <div class="we2-m-large">
-          <img src="images/medicine.jpg" alt="European Precision">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="videos/medecine.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
           <div class="we2-m-tag">
             <span class="we2-mt-dot"></span>
             <span>Certified European Protocol</span>
@@ -1451,7 +1469,7 @@
 
         <div class="we2-compare">
           <div class="we2c-head">
-            <span></span><span>Typical US</span><span>Lifestyle</span>
+            <span></span><span>Typical US</span><span>lifestyle</span>
           </div>
           <div class="we2c-row">
             <span>Dilution</span><span class="we2c-neg">Over-diluted</span><span class="we2c-pos">Full-strength</span>
@@ -1636,6 +1654,42 @@
             <p>Beautifully refined results tailored to each individual.</p>
           </div>
         </div>
+        <div class="gs-slide" data-idx="8">
+          <video src="videos/video2.mp4" autoplay muted playsinline></video>
+          <div class="gs-slide-caption">
+            <span class="gs-cap-tag">Treatment Video</span>
+            <p>Precision injection technique demonstration.</p>
+          </div>
+        </div>
+        <div class="gs-slide" data-idx="9">
+          <video src="videos/video3.mp4" autoplay muted playsinline></video>
+          <div class="gs-slide-caption">
+            <span class="gs-cap-tag">Procedure Video</span>
+            <p>Watch the expert application process.</p>
+          </div>
+        </div>
+        <div class="gs-slide" data-idx="10">
+          <video src="videos/video4.mp4" autoplay muted playsinline></video>
+          <div class="gs-slide-caption">
+            <span class="gs-cap-tag">Aesthetic Process</span>
+            <p>European precision in action.</p>
+          </div>
+        </div>
+        <div class="gs-slide" data-idx="11">
+          <video src="videos/video5.mp4" autoplay muted playsinline></video>
+          <div class="gs-slide-caption">
+            <span class="gs-cap-tag">Technique Video</span>
+            <p>Advanced facial anatomy mapping.</p>
+          </div>
+        </div>
+        <div class="gs-slide" data-idx="12">
+          <video src="videos/video6.mp4" autoplay muted playsinline></video>
+          <div class="gs-slide-caption">
+            <span class="gs-cap-tag">Injection Process</span>
+            <p>Real-time precision work.</p>
+          </div>
+        </div>
+      </div>
 
       <!-- Prev / Next -->
       <button class="gs-arrow gs-prev" id="gsPrev" aria-label="Previous">
@@ -1689,6 +1743,30 @@
       </div>
       <div class="gs-thumb" data-idx="7">
         <img src="images/lifestyle3.jpg" alt="">
+        <div class="gs-thumb-shine"></div>
+      </div>
+      <div class="gs-thumb" data-idx="8">
+        <img src="images/thumbnail.jpg" alt="">
+        <div class="gs-thumb-shine"></div>
+      </div>
+      <div class="gs-thumb" data-idx="9">
+        <img src="images/thumbnail.jpg" alt="">
+        <div class="gs-thumb-shine"></div>
+      </div>
+      <div class="gs-thumb" data-idx="10">
+        <img src="images/thumbnail.jpg" alt="">
+        <div class="gs-thumb-shine"></div>
+      </div>
+      <div class="gs-thumb" data-idx="11">
+        <img src="images/thumbnail.jpg" alt="">
+        <div class="gs-thumb-shine"></div>
+      </div>
+      <div class="gs-thumb" data-idx="12">
+        <img src="images/thumbnail.jpg" alt="">
+        <div class="gs-thumb-shine"></div>
+      </div>
+      <div class="gs-thumb" data-idx="13">
+        <img src="images/thumbnail.jpg" alt="">
         <div class="gs-thumb-shine"></div>
       </div>
     </div>
@@ -3211,7 +3289,7 @@
       </button>
 
       <div class="cm-header">
-        <div class="cm-eyebrow">Lifestyle Medical Spa</div>
+        <div class="cm-eyebrow">lifestyle Medical Spa</div>
         <h2 id="cm-title" class="cm-title">Request a<br><em>Consultation</em></h2>
         <p class="cm-subtitle">Experience European precision aesthetics. We will reach out within 24 hours to confirm
           your appointment.</p>
@@ -3457,7 +3535,7 @@
             <label class="cm-checkbox">
               <input type="checkbox" id="cm-consent" required>
               <span class="cm-checkmark"></span>
-              <span>I consent to being contacted by Lifestyle Medical Spa regarding my consultation request.</span>
+              <span>I consent to being contacted by lifestyle Medical Spa regarding my consultation request.</span>
             </label>
           </div>
         </div>
