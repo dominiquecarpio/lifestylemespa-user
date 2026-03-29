@@ -4803,60 +4803,116 @@ If you learn the visitor's name during conversation, address them personally. Al
     saveMessage('user', text);
     chatHistory.push({ role: 'user', content: text });
     
-    // Check for specific question about treatments
+    // Check for specific questions
     const treatmentsQuestion = /what treatments.*offer|what.*treatment.*available|treatment.*options/i.test(text);
+    const pricesQuestion = /what.*price|how much|cost|pricing/i.test(text);
+    const bookQuestion = /how.*book|schedule|appointment|book/i.test(text);
+    const correctionsQuestion = /correction|do you.*correction|fix.*prior|redo|unsatisfactory/i.test(text);
     
-    if (treatmentsQuestion && isSuggestion) {
-      // Custom response for "What treatments do you offer?" question
-      const treatmentReply = "We offer Botox, Dermal Fillers, Lip Augmentation, Facial Volumetry, Biostimulators, Mesotherapy, and specialized Hair Restoration — all performed with European precision techniques. " +
-        "Each treatment is tailored to your unique goals and facial anatomy.";
-      
-      // Show the custom treatment response
-      setTimeout(() => {
-        addBotMessage(treatmentReply);
-        chatHistory.push({ role: 'assistant', content: treatmentReply });
-        saveMessage('assistant', treatmentReply);
-      }, 400);
-      
-      // Then show Katarzyna's personal reaching out message
-      const adminReply = "Wait—Katarzyna is reaching out to you soon! In the meantime, for more details and recommendations, feel free to explore our services or book a consultation.";
-      setTimeout(() => {
-        addAdminMessage(adminReply, new Date().toISOString());
-        chatHistory.push({ role: 'assistant', content: adminReply });
-        saveMessage('assistant', adminReply);
-      }, 1200);
-    } else if (isSuggestion) {
-      // For other suggestions: get AI response first, then show admin message
-      showTyping();
-      document.getElementById('chatSendBtn').disabled = true;
-
-      callClaudeAPI(chatHistory).then(reply => {
-        removeTyping();
-        if (reply) {
-          chatHistory.push({ role: 'assistant', content: reply });
-          addBotMessage(reply);
-          saveMessage('assistant', reply);
-        }
+    if (isSuggestion) {
+      if (treatmentsQuestion) {
+        // Custom response for "What treatments do you offer?" question
+        const treatmentReply = "We offer Botox, Dermal Fillers, Lip Augmentation, Facial Volumetry, Biostimulators, Mesotherapy, and specialized Hair Restoration — all performed with European precision techniques. " +
+          "Each treatment is tailored to your unique goals and facial anatomy.";
         
-        // After AI response, generate and show contextual admin message
-        generateAdminReply(text).then(adminReply => {
-          setTimeout(() => {
-            addAdminMessage(adminReply, new Date().toISOString());
-            chatHistory.push({ role: 'assistant', content: adminReply });
-            saveMessage('assistant', adminReply);
-            document.getElementById('chatSendBtn').disabled = false;
-          }, 600);
-        }).catch(() => {
-          document.getElementById('chatSendBtn').disabled = false;
-        });
-      }).catch(() => {
-        removeTyping();
-        document.getElementById('chatSendBtn').disabled = false;
-        generateAdminReply(text).then(adminReply => {
+        // Show the custom treatment response
+        setTimeout(() => {
+          addBotMessage(treatmentReply);
+          chatHistory.push({ role: 'assistant', content: treatmentReply });
+          saveMessage('assistant', treatmentReply);
+        }, 400);
+        
+        // Then show Katarzyna's personal reaching out message
+        const adminReply = "Wait—Katarzyna is reaching out to you soon! In the meantime, for more details and recommendations, feel free to explore our services or book a consultation.";
+        setTimeout(() => {
           addAdminMessage(adminReply, new Date().toISOString());
+          chatHistory.push({ role: 'assistant', content: adminReply });
           saveMessage('assistant', adminReply);
+        }, 1200);
+      } else if (pricesQuestion) {
+        // Custom response for "What are your prices?" question
+        const priceReply = "Our pricing is customized based on your treatment plan and goals. Botox starts from $300, Fillers from $400 per syringe, Lip Augmentation from $110, and our specialized treatments like Biostimulators starting from $300. " +
+          "Multi-syringe discounts are available.";
+        
+        setTimeout(() => {
+          addBotMessage(priceReply);
+          chatHistory.push({ role: 'assistant', content: priceReply });
+          saveMessage('assistant', priceReply);
+        }, 400);
+        
+        const adminReply = "Wait—Katarzyna is reaching out to you soon! In the meantime, for a detailed pricing breakdown tailored to your goals, feel free to explore our services or book a consultation.";
+        setTimeout(() => {
+          addAdminMessage(adminReply, new Date().toISOString());
+          chatHistory.push({ role: 'assistant', content: adminReply });
+          saveMessage('assistant', adminReply);
+        }, 1200);
+      } else if (bookQuestion) {
+        // Custom response for "How do I book?" question
+        const bookReply = "Booking with us is simple! You can click the 'Book a Consultation' button on our website, call us directly at (313) 330-9999, or reach out through this chat. " +
+          "Katarzyna offers free consultations to discuss your goals, assess your needs, and create a personalized treatment plan.";
+        
+        setTimeout(() => {
+          addBotMessage(bookReply);
+          chatHistory.push({ role: 'assistant', content: bookReply });
+          saveMessage('assistant', bookReply);
+        }, 400);
+        
+        const adminReply = "Wait—Katarzyna is reaching out to you soon! She'd love to discuss your aesthetic goals and answer any questions. In the meantime, feel free to book a consultation directly.";
+        setTimeout(() => {
+          addAdminMessage(adminReply, new Date().toISOString());
+          chatHistory.push({ role: 'assistant', content: adminReply });
+          saveMessage('assistant', adminReply);
+        }, 1200);
+      } else if (correctionsQuestion) {
+        // Custom response for "Do you do corrections?" question
+        const correctionReply = "Absolutely—corrections and refinements are one of Katarzyna's specialties. She expertly resolves asymmetries, complications, and unsatisfactory results from prior treatments, restoring balance and harmony with precision. " +
+          "Many of her clients come to her specifically for correction work.";
+        
+        setTimeout(() => {
+          addBotMessage(correctionReply);
+          chatHistory.push({ role: 'assistant', content: correctionReply });
+          saveMessage('assistant', correctionReply);
+        }, 400);
+        
+        const adminReply = "Wait—Katarzyna is reaching out to you soon! She specializes in corrections and would love to discuss your specific situation. In the meantime, feel free to book a consultation to explore your options.";
+        setTimeout(() => {
+          addAdminMessage(adminReply, new Date().toISOString());
+          chatHistory.push({ role: 'assistant', content: adminReply });
+          saveMessage('assistant', adminReply);
+        }, 1200);
+      } else {
+        // For other suggestions: get AI response first, then show admin message
+        showTyping();
+        document.getElementById('chatSendBtn').disabled = true;
+
+        callClaudeAPI(chatHistory).then(reply => {
+          removeTyping();
+          if (reply) {
+            chatHistory.push({ role: 'assistant', content: reply });
+            addBotMessage(reply);
+            saveMessage('assistant', reply);
+          }
+          
+          // After AI response, generate and show contextual admin message
+          generateAdminReply(text).then(adminReply => {
+            setTimeout(() => {
+              addAdminMessage(adminReply, new Date().toISOString());
+              chatHistory.push({ role: 'assistant', content: adminReply });
+              saveMessage('assistant', adminReply);
+              document.getElementById('chatSendBtn').disabled = false;
+            }, 600);
+          }).catch(() => {
+            document.getElementById('chatSendBtn').disabled = false;
+          });
+        }).catch(() => {
+          removeTyping();
+          document.getElementById('chatSendBtn').disabled = false;
+          generateAdminReply(text).then(adminReply => {
+            addAdminMessage(adminReply, new Date().toISOString());
+            saveMessage('assistant', adminReply);
+          });
         });
-      });
+      }
     } else {
       // For custom messages: generate contextual admin reaching out message
       generateAdminReply(text).then(adminReply => {
