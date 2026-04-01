@@ -1,9 +1,47 @@
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('s', window.scrollY > 70));
 
+    // ── iOS Video Autoplay Fix ──
+    (function initHeroVideo() {
+      const videoEl = document.querySelector('.hvb-vid');
+      if (!videoEl) return;
+      
+      // Function to attempt video playback
+      const attemptPlay = () => {
+        const playPromise = videoEl.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            // Autoplay likely failed, but video will play on user interaction
+            console.log('Autoplay prevented:', error);
+          });
+        }
+      };
+      
+      // Try to play immediately
+      attemptPlay();
+      
+      // Also try after a short delay
+      setTimeout(attemptPlay, 500);
+      
+      // On first user interaction, ensure video is playing
+      const playOnInteraction = () => {
+        attemptPlay();
+        document.removeEventListener('touchstart', playOnInteraction);
+        document.removeEventListener('click', playOnInteraction);
+      };
+      document.addEventListener('touchstart', playOnInteraction, { once: true });
+      document.addEventListener('click', playOnInteraction, { once: true });
+    })();
 
-    document.getElementById('ham').addEventListener('click', () => document.getElementById('mob').classList.toggle('open'));
-    function cm() { document.getElementById('mob').classList.remove('open') }
+
+    document.getElementById('ham').addEventListener('click', () => {
+      document.getElementById('mob').classList.toggle('open');
+      document.getElementById('ham').classList.toggle('active');
+    });
+    function cm() {
+      document.getElementById('mob').classList.remove('open');
+      document.getElementById('ham').classList.remove('active');
+    }
 
 
     const obs = new IntersectionObserver(ents => {
