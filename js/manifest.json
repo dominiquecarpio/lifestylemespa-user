@@ -1,0 +1,25 @@
+{
+  "name": "Finesse Medical Spa",
+  "short_name": "Finesse Spa",
+  "description": "European Aesthetic Precision Medical Spa",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000000",
+  "theme_color": "#c9a96e",
+  "icons": [
+    {
+      "src": "images/Finesse%20Logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/Finesse%20Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

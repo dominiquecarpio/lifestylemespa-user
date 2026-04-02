@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finesse Medical Spa — European Aesthetic Precision</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="images/Finesse Logo.png">
+  <meta name="theme-color" content="#c9a96e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Finesse Spa">
   <link
     href="https://fonts.googleapis.com/css2?family=Italiana&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap"
     rel="stylesheet">
@@ -50,7 +56,7 @@
     <div class="hero-bg">
       <div class="hvb-stage" id="hvbStage">
         <video class="hvb-vid active" autoplay muted playsinline webkit-playsinline preload="metadata" disablePictureInPicture>
-          <source src="videos/intro.mp4" type="video/mp4">
+          <source src="videos/intro.mov" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -6762,6 +6768,21 @@ function sendDwQuick(btn) {
 document.getElementById('dwCodeInput').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') applyDiscountCode();
 });
+</script>
+
+<script>
+  // Register Service Worker for PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('js/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered:', registration);
+        })
+        .catch(error => {
+          console.log('Service Worker registration failed:', error);
+        });
+    });
+  }
 </script>
 
 </body>
