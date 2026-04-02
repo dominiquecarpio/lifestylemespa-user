@@ -50,7 +50,7 @@
     <div class="hero-bg">
       <div class="hvb-stage" id="hvbStage">
         <video class="hvb-vid active" autoplay muted playsinline webkit-playsinline preload="metadata" disablePictureInPicture>
-          <source src="videos/intro.mp4" type="video/mp4">
+          <source src="videos/intro.mov" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -3861,8 +3861,34 @@
     // ── Initialize Page ────────────────────────────────────
     async function initializePage() {
       await loadPromoCodesFromSupabase();
+      await loadChatAnswersFromSupabase();
       loadMessageAssistant();
       loadConsultationDiscountInfo();
+    }
+
+    async function loadChatAnswersFromSupabase() {
+      if (cachedChatAnswers) return cachedChatAnswers;
+      
+      try {
+        const { data, error } = await _supabase
+          .from('chat_answers')
+          .select('*')
+          .eq('active', true)
+          .order('created_at', { ascending: true });
+        
+        if (error) throw error;
+        cachedChatAnswers = data || [];
+        return cachedChatAnswers;
+      } catch (e) {
+        console.warn('Could not load chat answers from Supabase:', e.message);
+        // Fallback to defaults
+        cachedChatAnswers = [
+          { question: 'New client offer?', answer: 'Welcome! First-time clients receive <strong>15% off</strong> their first treatment. Book your consultation today to claim your exclusive offer.' },
+          { question: 'What codes are available?', answer: 'Check our available promo codes at the time of booking. Ask our team for the latest offers!' },
+          { question: 'Refer a friend?', answer: 'Refer a friend and both of you get special discounts. Ask our team about our referral program!' }
+        ];
+        return cachedChatAnswers;
+      }
     }
 
     // Call on page load
@@ -3874,17 +3900,11 @@
 
     // ── Load Message Assistant Content ──────────────────────
     function loadMessageAssistant() {
-      const stored = localStorage.getItem('lms_ai_answers');
-      const answers = stored ? JSON.parse(stored) : {
-        q1: 'Welcome! First-time clients receive <strong>15% off</strong> their first treatment. Book your consultation today to claim your exclusive offer.',
-        q2: 'Check our available promo codes at the time of booking. Ask our team for the latest offers!',
-        q3: 'Refer a friend and both of you get special discounts. Ask our team about our referral program!'
-      };
-
-      const questions = [
-        { q: 'New client offer?', a: answers.q1, time: '2:55 PM' },
-        { q: 'What codes are available?', a: answers.q2, time: '2:57 PM' },
-        { q: 'Refer a friend?', a: answers.q3, time: '2:59 PM' }
+      // Use cached chat answers from database
+      const questions = cachedChatAnswers ? cachedChatAnswers.map(a => ({ q: a.question, a: a.answer })) : [
+        { q: 'New client offer?', a: 'Welcome! First-time clients receive <strong>15% off</strong> their first treatment. Book your consultation today to claim your exclusive offer.' },
+        { q: 'What codes are available?', a: 'Check our available promo codes at the time of booking. Ask our team for the latest offers!' },
+        { q: 'Refer a friend?', a: 'Refer a friend and both of you get special discounts. Ask our team about our referral program!' }
       ];
 
       let html = '';
@@ -3936,6 +3956,7 @@
 
     // ── Promo Code Support ─────────────────────────────────
     let cachedPromoCodes = null;
+    let cachedChatAnswers = null;
 
     async function loadPromoCodesFromSupabase() {
       if (cachedPromoCodes) return cachedPromoCodes;
@@ -6699,24 +6720,19 @@ async function sendDwMessage() {
   saveDwHistory();
   showDwTyping();
 
-  // Load AI answers from localStorage
-  const stored = localStorage.getItem('lms_ai_answers');
-  const answers = stored ? JSON.parse(stored) : {
-    q1: 'Welcome! First-time clients receive <strong>15% off</strong> their first treatment. Book your consultation today to claim your exclusive offer.',
-    q2: 'Check our available promo codes at the time of booking. Ask our team for the latest offers!',
-    q3: 'Refer a friend and both of you get special discounts. Ask our team about our referral program!'
-  };
-
-  // Get reply based on question match
+  // Get reply from database chat answers
   let reply = '';
   const lowerText = text.toLowerCase();
   
-  if (lowerText.includes('new client') || lowerText.includes('first time')) {
-    reply = answers.q1;
-  } else if (lowerText.includes('code') || lowerText.includes('discount') || lowerText.includes('promotion') || lowerText.includes('available')) {
-    reply = answers.q2;
-  } else if (lowerText.includes('refer') || lowerText.includes('friend')) {
-    reply = answers.q3;
+  if (cachedChatAnswers && cachedChatAnswers.length > 0) {
+    // Try to match user input with stored questions
+    const match = cachedChatAnswers.find(a => 
+      lowerText.includes(a.question.toLowerCase().split('?')[0]) || 
+      (a.question.toLowerCase().includes('new client') && (lowerText.includes('new client') || lowerText.includes('first time'))) ||
+      (a.question.toLowerCase().includes('code') && (lowerText.includes('code') || lowerText.includes('discount') || lowerText.includes('promotion') || lowerText.includes('available'))) ||
+      (a.question.toLowerCase().includes('refer') && (lowerText.includes('refer') || lowerText.includes('friend')))
+    );
+    reply = match ? match.answer : 'Great question! For specific promotions and offers, please click the quick questions above or call us directly. We\'d love to help!';
   } else {
     reply = 'Great question! For specific promotions and offers, please click the quick questions above or call us directly. We\'d love to help!';
   }
@@ -6730,7 +6746,16 @@ async function sendDwMessage() {
 }
 
 function sendDwQuick(btn) {
-  document.getElementById('dwChatInput').value = btn.textContent;
+  const question = btn.textContent;
+  document.getElementById('dwChatInput').value = question;
+  // Find the matching answer from database
+  if (cachedChatAnswers) {
+    const match = cachedChatAnswers.find(a => a.question === question);
+    if (match) {
+      sendDwMessage();
+      return;
+    }
+  }
   sendDwMessage();
 }
 
