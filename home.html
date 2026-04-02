@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finesse Medical Spa — European Aesthetic Precision</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" href="images/Finesse Logo.png">
+  <link rel="icon" type="image/png" href="images/logo.png">
   <meta name="theme-color" content="#c9a96e">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -21,33 +21,125 @@
 <body>
 
 
-  <nav id="nav">
-    <img src="images/Finesse Logo.png" alt="finesse Medical Spa Logo" class="logo-img">
-    <a href="#home" class="logo">Finesse <em>Medical Spa</em></a>
+  <!-- ── Navbar ── -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <!-- Animated border line at bottom -->
+    <div class="nav-border-line"></div>
+
+    <!-- Logo group -->
+    <a href="#home" class="logo" aria-label="Finesse Medical Spa — home">
+      <img src="images/logo.png" alt="" class="logo-img" aria-hidden="true">
+      <span class="logo-text">Finesse <em>Medical Spa</em></span>
+    </a>
+
+    <!-- Desktop links -->
     <div class="nav-r">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#treatments">Treatments</a></li>
-        <li><a href="#why-euro">Why European</a></li>
-        <li><a href="#corrections">Corrections</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#aftercare">Aftercare</a></li>
+      <ul class="nav-links" role="list">
+        <li><a href="#home" class="nav-link" data-label="Home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-label="About">About</a></li>
+        <li><a href="#treatments" class="nav-link" data-label="Treatments">Treatments</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle nav-link" id="navDropdownToggle"
+            aria-expanded="false" aria-haspopup="true" onclick="toggleNavDropdown(event)">
+            <span>More</span>
+            <svg class="nav-dropdown-icon" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
+              <path d="M1 1L4.5 5L8 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu" role="menu" aria-label="More pages">
+            <a href="#why-euro" role="menuitem" onclick="closeNavDropdown()">
+              <span class="ndm-dot">◆</span>Why European
+            </a>
+            <a href="#corrections" role="menuitem" onclick="closeNavDropdown()">
+              <span class="ndm-dot">◆</span>Corrections
+            </a>
+            <a href="#pricing" role="menuitem" onclick="closeNavDropdown()">
+              <span class="ndm-dot">◆</span>Pricing
+            </a>
+            <a href="#aftercare" role="menuitem" onclick="closeNavDropdown()">
+              <span class="ndm-dot">◆</span>Aftercare
+            </a>
+          </div>
+        </li>
       </ul>
-      <a href="#contact" class="nav-book">Book Now</a>
-      <div class="ham" id="ham"><span></span><span></span><span></span></div>
+
+      <a href="#contact" class="nav-book">
+        <span class="nav-book-label">Book Now</span>
+        <span class="nav-book-shimmer"></span>
+      </a>
+
+      <!-- Hamburger -->
+      <button class="ham" id="ham" aria-label="Toggle menu" aria-expanded="false" aria-controls="mob" type="button">
+        <span class="ham-line ham-top"></span>
+        <span class="ham-line ham-mid"></span>
+        <span class="ham-line ham-bot"></span>
+      </button>
     </div>
   </nav>
 
-  <div class="mob" id="mob">
-    <a href="#home" onclick="cm()">Home</a>
-    <a href="#about" onclick="cm()">About</a>
-    <a href="#treatments" onclick="cm()">Treatments</a>
-    <a href="#why-euro" onclick="cm()">Why European</a>
-    <a href="#corrections" onclick="cm()">Corrections</a>
-    <a href="#pricing" onclick="cm()">Pricing</a>
-    <a href="#aftercare" onclick="cm()">Aftercare</a>
-    <a href="#contact" onclick="cm()" class="mob-book">Book Now</a>
+  <!-- ── Mobile Overlay ── -->
+  <div class="mob-overlay" id="mobOverlay" aria-hidden="true" onclick="cm()"></div>
+
+  <!-- ── Mobile Sidebar ── -->
+  <div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Navigation menu">
+
+    <div class="mob-divider"></div>
+
+    <!-- Nav links -->
+    <nav class="mob-nav" aria-label="Mobile navigation">
+      <a href="#home" class="mob-link" onclick="cm()" data-index="0">
+        <span class="mob-link-text">Home</span>
+        <span class="mob-link-arrow">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a href="#about" class="mob-link" onclick="cm()" data-index="1">
+        <span class="mob-link-text">About</span>
+        <span class="mob-link-arrow">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a href="#treatments" class="mob-link" onclick="cm()" data-index="2">
+        <span class="mob-link-text">Treatments</span>
+        <span class="mob-link-arrow">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a href="#why-euro" class="mob-link" onclick="cm()" data-index="3">
+        <span class="mob-link-text">Why European</span>
+        <span class="mob-link-arrow">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a href="#corrections" class="mob-link" onclick="cm()" data-index="4">
+        <span class="mob-link-text">Corrections</span>
+        <span class="mob-link-arrow">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a href="#pricing" class="mob-link" onclick="cm()" data-index="5">
+        <span class="mob-link-text">Pricing</span>
+        <span class="mob-link-arrow">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a href="#aftercare" class="mob-link" onclick="cm()" data-index="6">
+        <span class="mob-link-text">Aftercare</span>
+        <span class="mob-link-arrow">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </nav>
+
+    <!-- Bottom CTA -->
+    <div class="mob-bottom">
+      <a href="#contact" class="mob-book" onclick="cm()">
+        <span>Book a Consultation</span>
+        <span class="mob-book-icon">✦</span>
+      </a>
+      <div class="mob-footer-tag">European Expertise · Precision Medicine</div>
+    </div>
+
   </div>
 
   <section id="home" class="hero">
@@ -56,7 +148,7 @@
     <div class="hero-bg">
       <div class="hvb-stage" id="hvbStage">
         <video class="hvb-vid active" autoplay muted playsinline webkit-playsinline preload="metadata" disablePictureInPicture>
-          <source src="videos/intro.mp4" type="video/mp4">
+          <source src="videos/intro.mov" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -1408,7 +1500,7 @@
           <span>months lasting<br>results</span>
         </div>
         <div class="we2-seal">
-          <img src="images/Finesse Logo.png" alt="Lifestyle Medical Spa">
+          <img src="images/logo.png" alt="Lifestyle Medical Spa">
         </div>
       </div>
 
@@ -3557,18 +3649,36 @@
       }
 
       .av2h-count-row {
-        flex-wrap: wrap;
-        border: none;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 1px solid rgba(201, 169, 110, .12);
+        border-radius: 4px;
+        gap: 0;
+        width: 100%;
       }
 
       .av2h-count-item {
-        border: 1px solid rgba(201, 169, 110, .12);
-        border-radius: 2px;
+        border: none;
+        border-radius: 0;
+        padding: 12px 10px;
+      }
+
+      .av2h-count-item strong {
+        font-size: 1.4rem;
+      }
+
+      .av2h-count-item span {
+        font-size: .7rem;
+        letter-spacing: .12em;
+        white-space: normal;
+        text-align: center;
       }
 
       .av2h-count-div {
-        display: none;
+        display: block;
+        width: 1px;
+        background: rgba(201, 169, 110, .12);
+        align-self: stretch;
       }
 
       .av2h-meta {
@@ -6783,6 +6893,41 @@ document.getElementById('dwCodeInput').addEventListener('keydown', function(e) {
         });
     });
   }
+
+  // Navbar "More" dropdown for Why European / Corrections / Pricing / Aftercare
+  function toggleNavDropdown(event) {
+    event.stopPropagation();
+    const menu = document.getElementById('navDropdownMenu');
+    const button = document.getElementById('navDropdownToggle');
+    if (!menu || !button) return;
+
+    const isOpen = menu.classList.contains('open');
+    if (isOpen) {
+      closeNavDropdown();
+    } else {
+      menu.classList.add('open');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function closeNavDropdown() {
+    const menu = document.getElementById('navDropdownMenu');
+    const button = document.getElementById('navDropdownToggle');
+    if (!menu || !button) return;
+
+    menu.classList.remove('open');
+    button.setAttribute('aria-expanded', 'false');
+  }
+
+  document.addEventListener('click', function (event) {
+    const menu = document.getElementById('navDropdownMenu');
+    const button = document.getElementById('navDropdownToggle');
+    if (!menu || !button) return;
+
+    if (!menu.contains(event.target) && !button.contains(event.target)) {
+      closeNavDropdown();
+    }
+  });
 </script>
 
 </body>

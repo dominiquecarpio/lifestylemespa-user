@@ -1,4 +1,4 @@
-    const nav = document.getElementById('nav');
+const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('s', window.scrollY > 70));
 
     // ── iOS Video Autoplay Fix ──
@@ -35,14 +35,39 @@
 
 
     document.getElementById('ham').addEventListener('click', () => {
-      document.getElementById('mob').classList.toggle('open');
-      document.getElementById('ham').classList.toggle('active');
+      const mob = document.getElementById('mob');
+      const ham = document.getElementById('ham');
+      const overlay = document.getElementById('mobOverlay');
+      const isOpen = mob.classList.toggle('open');
+      ham.classList.toggle('active');
+      if (overlay) { overlay.classList.toggle('visible', isOpen); overlay.setAttribute('aria-hidden', !isOpen); }
+      ham.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      // iOS scroll lock
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     function cm() {
-      document.getElementById('mob').classList.remove('open');
-      document.getElementById('ham').classList.remove('active');
+      const mob = document.getElementById('mob');
+      const ham = document.getElementById('ham');
+      const overlay = document.getElementById('mobOverlay');
+      mob.classList.remove('open');
+      ham.classList.remove('active');
+      if (overlay) { overlay.classList.remove('visible'); overlay.setAttribute('aria-hidden', 'true'); }
+      ham.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
 
+    // Mobile "More" dropdown in mobile menu
+    const mobDropdownBtn = document.getElementById('mobDropdownBtn');
+    const mobDropdownContent = document.getElementById('mobDropdownContent');
+    const mobDropdown = document.getElementById('mobDropdown');
+    if (mobDropdownBtn && mobDropdownContent && mobDropdown) {
+      mobDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const opened = mobDropdown.classList.toggle('open');
+        mobDropdownBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+        mobDropdownContent.setAttribute('aria-hidden', opened ? 'false' : 'true');
+      });
+    }
 
     const obs = new IntersectionObserver(ents => {
       ents.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis') });
