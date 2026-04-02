@@ -9,7 +9,7 @@ const urlsToCache = [
   '/css/style.css',
   '/css/request.css',
   '/js/script.js',
-  '/images/Finesse%20Logo.png',
+  '/images/logo.png',
   '/js/manifest.json',
   '/js/service-worker.js'
 ];
