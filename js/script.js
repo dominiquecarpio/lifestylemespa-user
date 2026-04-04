@@ -49,8 +49,14 @@ const nav = document.getElementById('nav');
       const mob = document.getElementById('mob');
       const ham = document.getElementById('ham');
       const overlay = document.getElementById('mobOverlay');
+      const mobDropdown = document.getElementById('mobDropdown');
+      const mobDropdownBtn = document.getElementById('mobDropdownBtn');
+      const mobDropdownContent = document.getElementById('mobDropdownContent');
       mob.classList.remove('open');
       ham.classList.remove('active');
+      if (mobDropdown) { mobDropdown.classList.remove('open'); }
+      if (mobDropdownBtn) { mobDropdownBtn.setAttribute('aria-expanded', 'false'); }
+      if (mobDropdownContent) { mobDropdownContent.setAttribute('aria-hidden', 'true'); }
       if (overlay) { overlay.classList.remove('visible'); overlay.setAttribute('aria-hidden', 'true'); }
       ham.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
