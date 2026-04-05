@@ -161,8 +161,8 @@ nav.s {
 }
 
 .logo-img {
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   transition: transform .4s cubic-bezier(.34,1.56,.64,1), filter .4s;
   filter: none;
@@ -478,7 +478,7 @@ nav.s .ham-line { background: var(--ink); }
   nav.s .nav-border-line { display: none; }
 
   .logo { gap: 8px; }
-  .logo-img { width: 32px; height: 32px; }
+  .logo-img { width: 45px; height: 45px; }
   .logo-text { font-size: 1.35rem; }
   .nav-r { gap: 0; align-items: center; }
   .nav-links, .nav-book { display: none; }
@@ -2071,8 +2071,8 @@ footer small {
   }
 
   .logo-img {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
 
   .nav-r {
@@ -2118,8 +2118,8 @@ footer small {
   }
 
   .logo-img {
-    width: 30px;
-    height: 30px;
+    width: 49px;
+    height: 40px;
   }
 
   .nav-r {
@@ -2883,8 +2883,8 @@ footer small {
   }
 
   .logo-img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 
   .tvm-panel {
