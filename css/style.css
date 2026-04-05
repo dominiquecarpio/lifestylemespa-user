@@ -507,9 +507,10 @@ nav.s .ham-line { background: var(--ink); }
 /* ─── RIGHT SIDEBAR ─── */
 .mob {
     position: fixed;
-    top: 58px;
+    top: 51px;
     right: -1px;
     bottom: 474px;
+    height: 523px;
     width: min(320px, 85vw);
     background: linear-gradient(170deg, #161109 0%, #0d0b08 60%, #0a0806 100%);
     z-index: 490;
