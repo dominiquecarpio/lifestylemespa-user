@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finesse Medical Spa — European Aesthetic Precision</title>
+  <title>Finesse Medical Spa — Europejska Precyzja Estetyczna</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="images/logolink.png">
   <meta name="theme-color" content="#c9a96e">
@@ -37,13 +37,13 @@
     <!-- Desktop links -->
     <div class="nav-r">
       <ul class="nav-links" role="list">
-        <li><a href="#home" class="nav-link" data-label="Home">Home</a></li>
-        <li><a href="#about" class="nav-link" data-label="About">About</a></li>
-        <li><a href="#treatments" class="nav-link" data-label="Treatments">Treatments</a></li>
+        <li><a href="#home" class="nav-link" data-label="Strona Główna">Strona Główna</a></li>
+        <li><a href="#about" class="nav-link" data-label="O nas">O nas</a></li>
+        <li><a href="#treatments" class="nav-link" data-label="Zabiegi">Zabiegi</a></li>
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-toggle nav-link" id="navDropdownToggle" aria-expanded="false"
             aria-haspopup="true" onclick="toggleNavDropdown(event)">
-            <span>More</span>
+            <span>Więcej</span>
             <svg class="nav-dropdown-icon" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
               <path d="M1 1L4.5 5L8 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -51,27 +51,41 @@
           </button>
           <div class="nav-dropdown-menu" id="navDropdownMenu" role="menu" aria-label="More pages">
             <a href="#why-euro" role="menuitem" onclick="closeNavDropdown()">
-              <span class="ndm-dot">◆</span>Why European
+              <span class="ndm-dot">◆</span>Dlaczego Europejski
             </a>
             <a href="#corrections" role="menuitem" onclick="closeNavDropdown()">
-              <span class="ndm-dot">◆</span>Corrections
+              <span class="ndm-dot">◆</span>Korekty
             </a>
             <a href="#pricing" role="menuitem" onclick="closeNavDropdown()">
-              <span class="ndm-dot">◆</span>Pricing
+              <span class="ndm-dot">◆</span>Cennik
             </a>
             <a href="#aftercare" role="menuitem" onclick="closeNavDropdown()">
-              <span class="ndm-dot">◆</span>Aftercare
+              <span class="ndm-dot">◆</span>Opieka Pozabiegowa
             </a>
             <a href="#offers" role="menuitem" onclick="closeNavDropdown()">
-              <span class="ndm-dot">◆</span>Offers &amp; Services
+              <span class="ndm-dot">◆</span>Oferty i Usługi
             </a>
           </div>
         </li>
-        <button onclick="openComingSoonModal()" class="nav-book" type="button">
-        <span class="nav-book-label">Book Now</span>
+        <li class="nav-dropdown nav-settings">
+          <button type="button" class="nav-dropdown-toggle nav-link nav-settings-icon-btn" id="navSettingsToggle" aria-expanded="false" aria-haspopup="true" onclick="toggleSettingsDropdown(event)" aria-label="Ustawienia">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;">
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="navSettingsMenu" role="menu" aria-label="Settings menu">
+            <a href="home.html" role="menuitem" onclick="closeSettingsDropdown()">English</a>
+            <a href="poland_home.html" role="menuitem" onclick="closeSettingsDropdown()">Polski</a>
+            <a href="#" role="menuitem" onclick="event.preventDefault(); signOutAccount(); closeSettingsDropdown();">Wyloguj</a>
+          </div>
+        </li>
+      </ul>
+  <button onclick="openConsultModal()" class="nav-book" type="button">
+        <span class="nav-book-label">Zarezerwuj</span>
         <span class="nav-book-shimmer"></span>
       </button>
-
+      
       <button onclick="openAccountModal()" class="nav-account-avatar" type="button" id="navAccountBtn" aria-label="Account">
         <span class="nav-avatar-ring"></span>
         <span class="nav-avatar-inner" id="navAvatarInner">
@@ -83,21 +97,6 @@
         </span>
         <span class="nav-avatar-pulse"></span>
       </button>
-        <li class="nav-dropdown nav-settings">
-          <button type="button" class="nav-dropdown-toggle nav-link nav-settings-icon-btn" id="navSettingsToggle" aria-expanded="false" aria-haspopup="true" onclick="toggleSettingsDropdown(event)" aria-label="Settings">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;">
-              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="nav-dropdown-menu" id="navSettingsMenu" role="menu" aria-label="Settings menu">
-            <a href="home.html" role="menuitem" onclick="closeSettingsDropdown()">English</a>
-            <a href="poland_home.html" role="menuitem" onclick="closeSettingsDropdown()">Polski</a>
-            <a href="#" role="menuitem" onclick="event.preventDefault(); signOutAccount(); closeSettingsDropdown();">Logout</a>
-          </div>
-        </li>
-      </ul>
-  
     
 
       <!-- Hamburger -->
@@ -118,7 +117,7 @@
     <!-- Nav links -->
     <nav class="mob-nav" aria-label="Mobile navigation">
       <a href="#home" class="mob-link" onclick="cm()" data-index="0">
-        <span class="mob-link-text">Home</span>
+        <span class="mob-link-text">Strona Główna</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -127,7 +126,7 @@
         </span>
       </a>
       <a href="#about" class="mob-link" onclick="cm()" data-index="1">
-        <span class="mob-link-text">About</span>
+        <span class="mob-link-text">O nas</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -136,7 +135,7 @@
         </span>
       </a>
       <a href="#treatments" class="mob-link" onclick="cm()" data-index="2">
-        <span class="mob-link-text">Treatments</span>
+        <span class="mob-link-text">Zabiegi</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -145,7 +144,7 @@
         </span>
       </a>
       <a href="#why-euro" class="mob-link" onclick="cm()" data-index="3">
-        <span class="mob-link-text">Why European</span>
+        <span class="mob-link-text">Dlaczego Europejski</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -154,7 +153,7 @@
         </span>
       </a>
       <a href="#corrections" class="mob-link" onclick="cm()" data-index="4">
-        <span class="mob-link-text">Corrections</span>
+        <span class="mob-link-text">Korekty</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -163,7 +162,7 @@
         </span>
       </a>
       <a href="#pricing" class="mob-link" onclick="cm()" data-index="5">
-        <span class="mob-link-text">Pricing</span>
+        <span class="mob-link-text">Cennik</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -172,7 +171,7 @@
         </span>
       </a>
       <a href="#aftercare" class="mob-link" onclick="cm()" data-index="6">
-        <span class="mob-link-text">Aftercare</span>
+        <span class="mob-link-text">Opieka Pozabiegowa</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -181,7 +180,7 @@
         </span>
       </a>
       <a href="#offers" class="mob-link" onclick="cm()" data-index="7">
-        <span class="mob-link-text">Offers &amp; Services</span>
+        <span class="mob-link-text">Oferty i Usługi</span>
         <span class="mob-link-arrow">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
             <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -190,23 +189,23 @@
         </span>
       </a>
       <div class="mob-settings-section">
-        <div class="mob-settings-label">Settings</div>
+        <div class="mob-settings-label">Ustawienia</div>
         <a href="home.html" class="mob-link" onclick="cm()">English</a>
         <a href="poland_home.html" class="mob-link" onclick="cm()">Polski</a>
-        <a href="#" class="mob-link" onclick="cm(); signOutAccount(); return false;">Logout</a>
+        <a href="#" class="mob-link" onclick="cm(); signOutAccount(); return false;">Wyloguj</a>
       </div>
     </nav>
 
     <!-- Bottom CTA -->
     <div class="mob-bottom">
       <button class="mob-book mob-account" onclick="cm();openAccountModal()" type="button">
-        <span>Sign In / Profile</span>
+        <span>Zaloguj się / Profil</span>
       </button>
-      <button class="mob-book" onclick="cm();openComingSoonModal()" type="button">
-        <span>Book a Consultation</span>
+      <button class="mob-book" onclick="cm();openConsultModal()" type="button">
+        <span>Zarezerwuj Konsultację</span>
         <span class="mob-book-icon">✦</span>
       </button>
-      <div class="mob-footer-tag">European Expertise · Precision Medicine</div>
+      <div class="mob-footer-tag">Europejska Ekspertyza · Medycyna Precyzyjna</div>
     </div>
 
   </div>
@@ -227,8 +226,8 @@
       <div class="account-head">
         <div class="account-brand-mark">✦</div>
         <div>
-          <h2 id="accountTitle">Sign In</h2>
-          <p id="accountSubtitle">Use your email and password to access your profile.</p>
+          <h2 id="accountTitle">Zaloguj się</h2>
+          <p id="accountSubtitle">Użyj adresu e-mail i hasła, aby uzyskać dostęp do swojego profilu.</p>
         </div>
       </div>
 
@@ -262,22 +261,22 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.6"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
               </span>
               <input type="email" id="accountLoginEmail" placeholder=" " required autocomplete="email">
-              <label for="accountLoginEmail">Email</label>
+              <label for="accountLoginEmail">E-mail</label>
             </div>
             <div class="account-field">
               <span class="account-field-icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
               </span>
               <input type="password" id="accountLoginPassword" placeholder=" " required autocomplete="current-password">
-              <label for="accountLoginPassword">Password</label>
+              <label for="accountLoginPassword">Hasło</label>
             </div>
           </div>
           <div class="account-error" id="accountLoginError"></div>
           <button type="submit" class="account-submit">
-            <span>Sign In</span>
+            <span>Zaloguj się</span>
             <svg class="account-submit-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="account-switch-hint">No account? <button type="button" class="account-link-btn" onclick="switchAccountTab('signup')">Create one →</button></p>
+          <p class="account-switch-hint">Nie masz konta? <button type="button" class="account-link-btn" onclick="switchAccountTab('signup')">Utwórz →</button></p>
         </form>
 
         <!-- SIGNUP FORM -->
@@ -289,14 +288,14 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                 </span>
                 <input type="text" id="accountSignupFirstName" placeholder=" " required autocomplete="given-name">
-                <label for="accountSignupFirstName">First Name</label>
+                <label for="accountSignupFirstName">Imię</label>
               </div>
               <div class="account-field">
                 <span class="account-field-icon">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                 </span>
                 <input type="text" id="accountSignupLastName" placeholder=" " required autocomplete="family-name">
-                <label for="accountSignupLastName">Last Name</label>
+                <label for="accountSignupLastName">Nazwisko</label>
               </div>
             </div>
             <div class="account-field">
@@ -304,29 +303,29 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.6"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
               </span>
               <input type="email" id="accountSignupEmail" placeholder=" " required autocomplete="email">
-              <label for="accountSignupEmail">Email</label>
+              <label for="accountSignupEmail">E-mail</label>
             </div>
             <div class="account-field">
               <span class="account-field-icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
               </span>
               <input type="password" id="accountSignupPassword" placeholder=" " required autocomplete="new-password">
-              <label for="accountSignupPassword">Password</label>
+              <label for="accountSignupPassword">Hasło</label>
             </div>
             <div class="account-field">
               <span class="account-field-icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 4.18 2 2 0 015.08 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
               <input type="tel" id="accountSignupPhone" placeholder=" " autocomplete="tel">
-              <label for="accountSignupPhone">Phone</label>
+              <label for="accountSignupPhone">Telefon</label>
             </div>
           </div>
           <div class="account-error" id="accountSignupError"></div>
           <button type="submit" class="account-submit">
-            <span>Create Account</span>
+            <span>Utwórz Konto</span>
             <svg class="account-submit-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="account-switch-hint">Have an account? <button type="button" class="account-link-btn" onclick="switchAccountTab('login')">Sign in →</button></p>
+          <p class="account-switch-hint">Masz już konto? <button type="button" class="account-link-btn" onclick="switchAccountTab('login')">Zaloguj się →</button></p>
         </form>
 
         <!-- PROFILE VIEW -->
@@ -341,8 +340,8 @@
               </label>
             </div>
             <div class="account-welcome-text">
-              <p class="account-greeting">Welcome back, <span id="accountGreetingName">there</span> ✦</p>
-              <p class="account-subtext">Update your profile, add contact details, or sign out.</p>
+              <p class="account-greeting">Witaj ponownie, <span id="accountGreetingName"></span> ✦</p>
+              <p class="account-subtext">Zaktualizuj profil, dodaj dane kontaktowe lub wyloguj się.</p>
             </div>
           </div>
           <div class="account-status" id="accountProfileStatus"></div>
@@ -353,14 +352,14 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                 </span>
                 <input type="text" id="accountProfileFirstName" placeholder=" " required>
-                <label for="accountProfileFirstName">First Name</label>
+                <label for="accountProfileFirstName">Imię</label>
               </div>
               <div class="account-field">
                 <span class="account-field-icon">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                 </span>
                 <input type="text" id="accountProfileLastName" placeholder=" " required>
-                <label for="accountProfileLastName">Last Name</label>
+                <label for="accountProfileLastName">Nazwisko</label>
               </div>
             </div>
             <div class="account-field">
@@ -368,25 +367,25 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.6"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
               </span>
               <input type="email" id="accountProfileEmail" placeholder=" " readonly>
-              <label for="accountProfileEmail">Email</label>
+              <label for="accountProfileEmail">E-mail</label>
             </div>
             <div class="account-field">
               <span class="account-field-icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 4.18 2 2 0 015.08 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
               <input type="tel" id="accountProfilePhone" placeholder=" ">
-              <label for="accountProfilePhone">Phone</label>
+              <label for="accountProfilePhone">Telefon</label>
             </div>
             <div class="account-field account-field-hidden">
               <input type="file" id="accountProfileAvatarFile" accept="image/*" style="display:none;">
               <input type="url" id="accountProfileAvatar" placeholder=" ">
-              <label for="accountProfileAvatar">Avatar URL</label>
+              <label for="accountProfileAvatar">URL Avatara</label>
             </div>
           </div>
           <div class="account-error" id="accountProfileError"></div>
           <div class="account-actions">
             <button type="button" class="account-submit" onclick="saveProfile()">
-              <span>Save Profile</span>
+              <span>Zapisz Profil</span>
               <svg class="account-submit-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 21 17 13 7 13 7 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 3 7 8 15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <button type="button" class="account-signout" onclick="signOutAccount()">
@@ -432,7 +431,7 @@
         European Expertise · Educator & Trainer · Correction Specialist · Precision Aesthetic Medicine
       </div>
       <h1 class="hero-h1">
-        <span class="hero-h1-line" data-line="1">Excellence in</span>
+        <span class="hero-h1-line" data-line="1">Doskonałość w</span>
         <span class="hero-h1-line hero-h1-em" data-line="2"><em>Aesthetic</em></span>
         <span class="hero-h1-line hero-h1-em" data-line="3"><em>Medicine</em></span>
       </h1>
@@ -442,18 +441,18 @@
         artistry to every treatment. For her, aesthetic medicine is art—and her passion for excellence drives everything
         she does.</p>
       <div class="hero-ctas">
-        <a href="#treatments" class="btn-outline-white">Explore Treatments</a>
-        <button onclick="openComingSoonModal()" class="btn-gold-fill" type="button">Book Consultation</button>
+        <a href="#treatments" class="btn-outline-white">Poznaj Zabiegi</a>
+        <button onclick="openConsultModal()" class="btn-gold-fill" type="button">Zarezerwuj Konsultację</button>
       </div>
     </div>
 
     <!-- ── Vertical side label ── -->
-    <div class="hero-side-text">Katarzyna Marcinec — Master Injector</div>
+    <div class="hero-side-text">Katarzyna Marcinec — Mistrz Iniekcji</div>
 
     <!-- ── Scroll indicator ── -->
     <div class="hero-scroll-line"></div>
     <div class="hero-scroll-label">
-      <span>Scroll</span>
+      <span>Przewiń</span>
       <svg width="12" height="20" viewBox="0 0 12 20" fill="none">
         <rect x="1" y="1" width="10" height="18" rx="5" stroke="currentColor" stroke-width="1.2" />
         <circle class="hero-scroll-dot" cx="6" cy="5" r="2" fill="currentColor" />
@@ -478,36 +477,36 @@
 
   <div class="ticker">
     <div class="ticker-track">
-      <span>Botox</span><span class="dot">◆</span>
-      <span>Lip Augmentation</span><span class="dot">◆</span>
-      <span>Facial Volumetry</span><span class="dot">◆</span>
-      <span>Biostimulators</span><span class="dot">◆</span>
-      <span>Mesotherapy</span><span class="dot">◆</span>
-      <span>Dermal Fillers</span><span class="dot">◆</span>
-      <span>Events &amp; Parties</span><span class="dot">◆</span>
-      <span>In-Home Treatments</span><span class="dot">◆</span>
-      <span>Refer a Friend</span><span class="dot">◆</span>
-      <span>European Precision</span><span class="dot">◆</span>
-      <span>Natural Results</span><span class="dot">◆</span>
-      <span>Botox</span><span class="dot">◆</span>
-      <span>Lip Augmentation</span><span class="dot">◆</span>
-      <span>Facial Volumetry</span><span class="dot">◆</span>
-      <span>Biostimulators</span><span class="dot">◆</span>
-      <span>Mesotherapy</span><span class="dot">◆</span>
-      <span>Dermal Fillers</span><span class="dot">◆</span>
-      <span>Events &amp; Parties</span><span class="dot">◆</span>
-      <span>In-Home Treatments</span><span class="dot">◆</span>
-      <span>Refer a Friend</span><span class="dot">◆</span>
-      <span>European Precision</span><span class="dot">◆</span>
-      <span>Natural Results</span><span class="dot">◆</span>
+      <span>Botoks</span><span class="dot">◆</span>
+      <span>Powiększanie Ust</span><span class="dot">◆</span>
+      <span>Wolumetria Twarzy</span><span class="dot">◆</span>
+      <span>Biostymulatoty</span><span class="dot">◆</span>
+      <span>Mezoterapia</span><span class="dot">◆</span>
+      <span>Wypełniacze</span><span class="dot">◆</span>
+      <span>Wydarzenia i Imprezy</span><span class="dot">◆</span>
+      <span>Zabiegi w Domu</span><span class="dot">◆</span>
+      <span>Poleć Przyjaciela</span><span class="dot">◆</span>
+      <span>Europejska Precyzja</span><span class="dot">◆</span>
+      <span>Naturalne Efekty</span><span class="dot">◆</span>
+      <span>Botoks</span><span class="dot">◆</span>
+      <span>Powiększanie Ust</span><span class="dot">◆</span>
+      <span>Wolumetria Twarzy</span><span class="dot">◆</span>
+      <span>Biostymulatoty</span><span class="dot">◆</span>
+      <span>Mezoterapia</span><span class="dot">◆</span>
+      <span>Wypełniacze</span><span class="dot">◆</span>
+      <span>Wydarzenia i Imprezy</span><span class="dot">◆</span>
+      <span>Zabiegi w Domu</span><span class="dot">◆</span>
+      <span>Poleć Przyjaciela</span><span class="dot">◆</span>
+      <span>Europejska Precyzja</span><span class="dot">◆</span>
+      <span>Naturalne Efekty</span><span class="dot">◆</span>
     </div>
   </div>
 
 
   <section id="about" class="about">
     <div class="about-left rev">
-      <div class="section-label">About Us</div>
-      <h2>Aesthetic Expertise<br>You Can <em>Trust</em></h2>
+      <div class="section-label">O nas</div>
+      <h2>Ekspertyza Estetyczna<br>Której Możesz <em>Zaufać</em></h2>
       <p>Finesse Medical Spa is led by Katarzyna Marcinec, an internationally trained aesthetic practitioner who has
         turned her craft into an art form — one she pursues with deep passion and unwavering dedication. Known for
         delivering natural, structured, and refined results, Katarzyna brings a rare combination of technical mastery
@@ -520,7 +519,7 @@
         <img src="images/image2.webp" alt="Katarzyna Marcinec" class="sig-photo">
         <div>
           <strong>Katarzyna Marcinec</strong>
-          <span>Lead Practitioner & Founder</span>
+          <span>Główna Specjalistka i Założycielka</span>
         </div>
       </div>
     </div>
@@ -532,11 +531,11 @@
       </div>
       <div class="about-stat-block">
         <div class="asb-item">
-          <strong>10+</strong><span>Years of Expertise</span>
+          <strong>10+</strong><span>Lat Doświadczenia</span>
         </div>
         <div class="asb-div"></div>
         <div class="asb-item">
-          <strong>EU</strong><span>Certified Protocols</span>
+          <strong>UE</strong><span>Certyfikowane Protokoły</span>
         </div>
       </div>
     </div>
@@ -553,19 +552,19 @@
       </div>
     </div>
     <div class="ms-content">
-      <div class="ms-quote">"Precision is not a technique.<br>It is a <em>philosophy.</em>"</div>
+      <div class="ms-quote">"Precyzja to nie technika.<br>To <em>filozofia.</em>"</div>
       <div class="ms-pillars">
-        <div class="ms-pill"><span>Integrity</span>
-          <p>We only recommend what truly serves your long-term aesthetic goals.</p>
+        <div class="ms-pill"><span>Integralność</span>
+          <p>Polecamy tylko to, co naprawdę służy Twoim długoterminowym celom estetycznym.</p>
         </div>
-        <div class="ms-pill"><span>Precision</span>
-          <p>Every injection is measured and placed with anatomical exactness.</p>
+        <div class="ms-pill"><span>Precyzja</span>
+          <p>Każdy zastrzyk jest mierzony i umieszczany z anatomiczną dokładnością.</p>
         </div>
-        <div class="ms-pill"><span>Artistry</span>
-          <p>Aesthetic medicine as a fine art, focused on harmony and expression.</p>
+        <div class="ms-pill"><span>Artyzm</span>
+          <p>Medycyna estetyczna jako sztuka piękna, skupiona na harmonii i wyrazie.</p>
         </div>
-        <div class="ms-pill"><span>Safety</span>
-          <p>Strict clinical protocols ensure your health is never compromised.</p>
+        <div class="ms-pill"><span>Bezpieczeństwo</span>
+          <p>Ścisłe protokoły kliniczne gwarantują, że Twoje zdrowie nigdy nie jest zagrożone.</p>
         </div>
       </div>
     </div>
@@ -575,130 +574,130 @@
   <section id="treatments" class="treatments">
     <div class="treat-header rev">
       <div>
-        <div class="section-label">Treatments</div>
-        <h2>Advanced Aesthetic <em>Treatments</em></h2>
+        <div class="section-label">Zabiegi</div>
+        <h2>Zaawansowane <em>Zabiegi</em> Estetyczne</h2>
       </div>
-      <a href="#pricing" class="btn-gold-fill">View Pricing</a>
+      <a href="#pricing" class="btn-gold-fill">Zobacz Cennik</a>
     </div>
     <div class="treat-grid">
 
       <!-- Card 01 -->
       <div class="tcard rev d1"
-        onclick="openTreatModal('images/image6.webp','Botox','Botox treatments help reduce wrinkles, soften facial lines, and prevent deeper expression lines while maintaining natural movement.','Full Forehead from','$300')">
+        onclick="openTreatModal('images/image6.webp','Botoks','Zabiegi botoksem pomagają redukować zmarszczki, wygładzać linie twarzy i zapobiegać głębszym liniom mimicznym, zachowując naturalny ruch.','Pełne Czoło od','$300')">
         <div class="tcard-img">
           <img src="images/image6.webp" alt="Botox Treatment">
           <div class="tcard-play-overlay">
             <div class="tcard-play-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
                 <path d="M8 5v14l11-7z" />
-              </svg></div><span>View Details</span>
+              </svg></div><span>Zobacz Szczegóły</span>
           </div>
         </div>
         <div class="tcard-body">
           <div class="tcard-num">01</div>
-          <h3>Botox</h3>
-          <p>Botox treatments help reduce wrinkles, soften facial lines, and prevent deeper expression lines while
-            maintaining natural movement.</p>
-          <div class="tcard-foot"><span>Full Forehead from</span><strong>$300</strong></div>
+          <h3>Botoks</h3>
+          <p>Zabiegi botoksem pomagają redukować zmarszczki, wygładzać linie twarzy i zapobiegać głębszym liniom mimicznym,
+            zachowując naturalny ruch.</p>
+          <div class="tcard-foot"><span>Pełne Czoło od</span><strong>$300</strong></div>
         </div>
       </div>
 
       <!-- Card 02 -->
       <div class="tcard tcard-dark rev d2"
-        onclick="openTreatModal('images/lifestle1.jpg','Lip Augmentation','Enhance lip shape, volume, and symmetry using advanced filler techniques for beautifully balanced, natural-looking lips.','Lips filler from','$490')">
+        onclick="openTreatModal('images/lifestle1.jpg','Powiększanie Ust','Popraw kształt, objętość i symetrię ust za pomocą zaawansowanych technik wypełniaczy, uzyskując pięknie wyważone, naturalne usta.','Wypełniacz ust od','$490')">
         <div class="tcard-img">
           <img src="images/lifestle1.jpg" alt="Lip Augmentation">
           <div class="tcard-play-overlay">
             <div class="tcard-play-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
                 <path d="M8 5v14l11-7z" />
-              </svg></div><span>View Details</span>
+              </svg></div><span>Zobacz Szczegóły</span>
           </div>
         </div>
         <div class="tcard-body">
           <div class="tcard-num">02</div>
-          <h3>Lip Augmentation</h3>
-          <p>Enhance lip shape, volume, and symmetry using advanced filler techniques for beautifully balanced,
-            natural-looking lips.</p>
-          <div class="tcard-foot"><span>Lips Filler From</span><strong>$490</strong></div>
+          <h3>Powiększanie Ust</h3>
+          <p>Popraw kształt, objętość i symetrię ust za pomocą zaawansowanych technik wypełniaczy, uzyskując
+            pięknie wyważone, naturalne usta.</p>
+          <div class="tcard-foot"><span>Wypełniacz Ust Od</span><strong>$490</strong></div>
         </div>
       </div>
 
       <!-- Card 03 -->
       <div class="tcard rev d3"
-        onclick="openTreatModal('images/facialVolumetry.jpg','Facial Volumetry','Restore lost facial volume in the cheeks, jawline, and chin to create a more youthful and defined appearance.','Per Syringe from','$400')">
+        onclick="openTreatModal('images/facialVolumetry.jpg','Wolumetria Twarzy','Przywróć utraconą objętość twarzy w policzkach, linii szczęki i brodzie, tworząc bardziej młodzieńczy i wyrazisty wygląd.','Za strzykawkę od','$400')">
         <div class="tcard-img">
           <img src="images/FacialVolumetry.jpg" alt="Facial Volumetry">
           <div class="tcard-play-overlay">
             <div class="tcard-play-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
                 <path d="M8 5v14l11-7z" />
-              </svg></div><span>View Details</span>
+              </svg></div><span>Zobacz Szczegóły</span>
           </div>
         </div>
         <div class="tcard-body">
           <div class="tcard-num">03</div>
-          <h3>Facial Volumetry</h3>
-          <p>Restore lost facial volume in the cheeks, jawline, and chin to create a more youthful and defined
-            appearance.</p>
-          <div class="tcard-foot"><span>Per Syringe from</span><strong>$400</strong></div>
+          <h3>Wolumetria Twarzy</h3>
+          <p>Przywróć utraconą objętość twarzy w policzkach, linii szczęki i brodzie, tworząc bardziej
+            młodzieńczy i wyrazisty wygląd.</p>
+          <div class="tcard-foot"><span>Za strzykawkę od</span><strong>$400</strong></div>
         </div>
       </div>
 
       <!-- Card 04 -->
       <div class="tcard rev d3"
-        onclick="openTreatModal('images/Mesotherapy.webp','Mesotherapy','Delivers vitamins, nutrients, and active ingredients directly into the skin to rejuvenate and revitalize the complexion.','Face from','$250')">
+        onclick="openTreatModal('images/Mesotherapy.webp','Mezoterapia','Dostarcza witaminy, składniki odżywcze i aktywne substancje bezpośrednio do skóry, odnawiając i rewitalizując cerę.','Twarz od','$250')">
         <div class="tcard-img">
           <img src="images/Mesotherapy.webp" alt="Mesotherapy">
           <div class="tcard-play-overlay">
             <div class="tcard-play-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
                 <path d="M8 5v14l11-7z" />
-              </svg></div><span>View Details</span>
+              </svg></div><span>Zobacz Szczegóły</span>
           </div>
         </div>
         <div class="tcard-body">
           <div class="tcard-num">04</div>
-          <h3>Mesotherapy</h3>
-          <p>Delivers vitamins, nutrients, and active ingredients directly into the skin to rejuvenate and revitalize
-            the complexion.</p>
-          <div class="tcard-foot"><span>Face from</span><strong>$250</strong></div>
+          <h3>Mezoterapia</h3>
+          <p>Dostarcza witaminy, składniki odżywcze i aktywne substancje bezpośrednio do skóry,
+            odnawiając i rewitalizując cerę.</p>
+          <div class="tcard-foot"><span>Twarz od</span><strong>$250</strong></div>
         </div>
       </div>
 
       <!-- Card 05 -->
       <div class="tcard tcard-dark rev d4"
-        onclick="openTreatModal('images/dermal.png','Dermal Fillers','Premium fillers smooth wrinkles, restore volume, and sculpt facial features with precision using Juvederm, Restylane, or Belotero.','Per Syringe from','$400')">
+        onclick="openTreatModal('images/dermal.png','Wypełniacze Skórne','Wypełniacze premium wygładzają zmarszczki, przywracają objętość i rzeźbią rysy twarzy z precyzją przy użyciu Juvederm, Restylane lub Belotero.','Za strzykawkę od','$400')">
         <div class="tcard-img">
           <img src="images/dermal.png" alt="Dermal Fillers">
           <div class="tcard-play-overlay">
             <div class="tcard-play-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
                 <path d="M8 5v14l11-7z" />
-              </svg></div><span>View Details</span>
+              </svg></div><span>Zobacz Szczegóły</span>
           </div>
         </div>
         <div class="tcard-body">
           <div class="tcard-num">05</div>
-          <h3>Dermal Fillers</h3>
-          <p>Premium fillers smooth wrinkles, restore volume, and sculpt facial features with precision using Juvederm,
-            Restylane, or Belotero.</p>
-          <div class="tcard-foot"><span>Per Syringe from</span><strong>$400</strong></div>
+          <h3>Wypełniacze Skórne</h3>
+          <p>Wypełniacze premium wygładzają zmarszczki, przywracają objętość i rzeźbią rysy twarzy
+            z precyzją przy użyciu Juvederm, Restylane lub Belotero.</p>
+          <div class="tcard-foot"><span>Za strzykawkę od</span><strong>$400</strong></div>
         </div>
       </div>
 
       <!-- Card 06 -->
       <div class="tcard rev d1"
-        onclick="openTreatModal('images/image5.webp','Biostimulators','Stimulate natural collagen production, improving skin texture, elasticity, and overall facial structure for long-lasting regeneration.','Starting from','$300')">
+        onclick="openTreatModal('images/image5.webp','Biostymulatoty','Stymuluj naturalną produkcję kolagenu, poprawiając teksturę skóry, elastyczność i ogólną strukturę twarzy dla długotrwałej regeneracji.','Od','$300')">
         <div class="tcard-img">
           <img src="images/image5.webp" alt="Biostimulators">
           <div class="tcard-play-overlay">
             <div class="tcard-play-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
                 <path d="M8 5v14l11-7z" />
-              </svg></div><span>View Details</span>
+              </svg></div><span>Zobacz Szczegóły</span>
           </div>
         </div>
         <div class="tcard-body">
           <div class="tcard-num">06</div>
-          <h3>Biostimulators</h3>
-          <p>Stimulate natural collagen production, improving skin texture, elasticity, and overall facial structure for
-            long-lasting regeneration.</p>
-          <div class="tcard-foot"><span>Starting from</span><strong>$300</strong></div>
+          <h3>Biostymulatoty</h3>
+          <p>Stymuluj naturalną produkcję kolagenu, poprawiając teksturę skóry, elastyczność
+            i ogólną strukturę twarzy dla długotrwałej regeneracji.</p>
+          <div class="tcard-foot"><span>Od</span><strong>$300</strong></div>
         </div>
       </div>
 
@@ -761,9 +760,9 @@
 
           <!-- Feature pills -->
           <div class="tvm-features">
-            <span class="tvm-feat">✦ European Technique</span>
-            <span class="tvm-feat">✦ Natural Results</span>
-            <span class="tvm-feat">✦ FDA-Approved Products</span>
+            <span class="tvm-feat">✦ Europejska Technika</span>
+            <span class="tvm-feat">✦ Naturalne Efekty</span>
+            <span class="tvm-feat">✦ Produkty Zatwierdzone przez FDA</span>
           </div>
 
           <!-- Price row -->
@@ -776,13 +775,13 @@
 
           <!-- CTA -->
           <a href="#contact" class="tvm-cta-btn" onclick="closeTreatModal()">
-            <span>Book This Treatment</span>
+            <span>Zarezerwuj Ten Zabieg</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
           </a>
-          <p class="tvm-note">Free consultation included · No obligation</p>
+          <p class="tvm-note">Bezpłatna konsultacja · Bez zobowiązań</p>
         </div>
 
       </div>
@@ -1738,12 +1737,11 @@
     <div class="we2-header rev">
       <div class="we2-header-label">
         <span class="we2-hl-rule"></span>
-        <span class="we2-hl-text">Why European Aesthetics</span>
+        <span class="we2-hl-text">Dlaczego Europejska Estetyka</span>
         <span class="we2-hl-rule"></span>
       </div>
-      <h2 class="we2-title">The European Standard<br>in Aesthetic <em>Medicine</em></h2>
-      <p class="we2-intro">Where science meets artistry — because your face deserves nothing less than precision shaped
-        by decades of European clinical excellence.</p>
+      <h2 class="we2-title">Europejski Standard<br>w Medycynie <em>Estetycznej</em></h2>
+      <p class="we2-intro">Gdzie nauka spotyka się ze sztuką — bo Twoja twarz zasługuje na precyzję ukształtowaną przez dekady europejskiej doskonałości klinicznej.</p>
     </div>
 
     <div class="we2-body">
@@ -1756,22 +1754,22 @@
           </video>
           <div class="we2-m-tag">
             <span class="we2-mt-dot"></span>
-            <span>Certified European Protocol</span>
+            <span>Certyfikowany Protokół Europejski</span>
           </div>
         </div>
         <div class="we2-m-stack">
           <div class="we2-m-small">
             <img src="images/medecine1.jpg" alt="Facial Anatomy Precision">
-            <div class="we2-ms-label">Anatomical Mapping</div>
+            <div class="we2-ms-label">Mapowanie Anatomiczne</div>
           </div>
           <div class="we2-m-small we2-m-offset">
             <img src="images/medecine2.jpg" alt="Natural Results">
-            <div class="we2-ms-label">Natural Results</div>
+            <div class="we2-ms-label">Naturalne Efekty</div>
           </div>
         </div>
         <div class="we2-stat-float">
           <strong>4–6</strong>
-          <span>months lasting<br>results</span>
+          <span>miesiące trwałych<br>efektów</span>
         </div>
         <div class="we2-seal">
           <img src="images/logo.png" alt="Lifestyle Medical Spa">
@@ -1780,8 +1778,7 @@
 
       <div class="we2-content rev d2">
 
-        <p class="we2-body-p">In Europe, aesthetic procedures follow stricter clinical regulations and a deeper respect
-          for facial anatomy. Neurotoxins are treated as precise therapeutic tools — never mass-market commodities.</p>
+        <p class="we2-body-p">W Europie zabiegi estetyczne podlegają surowszym regulacjom klinicznym i głębszemu poszanowaniu anatomii twarzy. Neurotoksyny traktowane są jako precyzyjne narzędzia terapeutyczne — nigdy jako produkty masowe.</p>
 
         <div class="we2-pillars">
           <div class="we2-pillar">
@@ -1793,8 +1790,8 @@
               </svg>
             </div>
             <div>
-              <strong>Full-Strength Products</strong>
-              <span>Pharmaceutical-grade, never over-diluted neurotoxins for maximum efficacy.</span>
+              <strong>Produkty Pełnej Siły</strong>
+              <span>Neurotoksyny klasy farmaceutycznej, nigdy nadmiernie rozcieńczane, dla maksymalnej skuteczności.</span>
             </div>
           </div>
           <div class="we2-pillar">
@@ -1805,8 +1802,8 @@
               </svg>
             </div>
             <div>
-              <strong>Anatomical Facial Mapping</strong>
-              <span>Every injection site is deliberate, informed by deep anatomical knowledge.</span>
+              <strong>Anatomiczne Mapowanie Twarzy</strong>
+              <span>Każde miejsce iniekcji jest przemyślane i oparte na głębokiej wiedzy anatomicznej.</span>
             </div>
           </div>
           <div class="we2-pillar">
@@ -1817,8 +1814,8 @@
               </svg>
             </div>
             <div>
-              <strong>Natural, Expressive Results</strong>
-              <span>Results that move with you — not a frozen mask, but your best self.</span>
+              <strong>Naturalne, Wyraziste Efekty</strong>
+              <span>Efekty, które poruszają się razem z Tobą — nie zamrożona maska, lecz Twoje najlepsze ja.</span>
             </div>
           </div>
           <div class="we2-pillar">
@@ -1830,30 +1827,29 @@
               </svg>
             </div>
             <div>
-              <strong>Targeted Precision Only</strong>
-              <span>No excess, no guesswork — precise medical strength injections, medically justified every
-                time.</span>
+              <strong>Wyłącznie Celna Precyzja</strong>
+              <span>Bez nadmiaru, bez zgadywania — precyzyjne zastrzyki o sile medycznej, zawsze uzasadnione medycznie.</span>
             </div>
           </div>
         </div>
 
         <div class="we2-compare">
           <div class="we2c-head">
-            <span></span><span>Typical US</span><span>Finesse</span>
+            <span></span><span>Typowe USA</span><span>Finesse</span>
           </div>
           <div class="we2c-row">
-            <span>Dilution</span><span class="we2c-neg">Over-diluted</span><span class="we2c-pos">Full-strength</span>
+            <span>Rozcieńczenie</span><span class="we2c-neg">Nadmiernie rozcieńczone</span><span class="we2c-pos">Pełna siła</span>
           </div>
           <div class="we2c-row">
-            <span>Precision</span><span class="we2c-neg">One-size-fits-all</span><span class="we2c-pos">Anatomical
+            <span>Precyzja</span><span class="we2c-neg">One-size-fits-all</span><span class="we2c-pos">Anatomical
               mapping</span>
           </div>
           <div class="we2c-row">
-            <span>Results last</span><span class="we2c-neg">2–4 months</span><span class="we2c-pos">4–6 months</span>
+            <span>Trwałość efektów</span><span class="we2c-neg">2–4 miesiące</span><span class="we2c-pos">4–6 miesięcy</span>
           </div>
           <div class="we2c-row we2c-last">
-            <span>Outcome</span><span class="we2c-neg">Frozen / overfilled</span><span class="we2c-pos">Natural &
-              refined</span>
+            <span>Rezultat</span><span class="we2c-neg">Zamrożony / przepełniony</span><span class="we2c-pos">Naturalny &
+              wyrafinowany</span>
           </div>
         </div>
 
@@ -1864,18 +1860,18 @@
 
   <section id="pricing" class="pricing">
     <div class="pricing-head rev">
-      <div class="section-label">Pricing</div>
-      <h2>Injectable <em>Treatments</em></h2>
+      <div class="section-label">Cennik</div>
+      <h2>Zabiegi <em>Iniekcyjne</em></h2>
     </div>
     <div class="pricing-grid">
       <div class="pcol rev d1">
-        <div class="pcol-head">Neuromodulators</div>
-        <div class="prow"><span>Full Forehead (2 Areas)</span><strong>$300</strong></div>
-        <div class="prow"><span>3 Areas (Forehead + Eyes)</span><strong>$400</strong></div>
-        <div class="prow"><span>Lips filler</span><strong>$490</strong></div>
+        <div class="pcol-head">Neuromodulatory</div>
+        <div class="prow"><span>Pełne Czoło (2 Obszary)</span><strong>$300</strong></div>
+        <div class="prow"><span>3 Obszary (Czoło + Oczy)</span><strong>$400</strong></div>
+        <div class="prow"><span>Wypełniacz ust</span><strong>$490</strong></div>
       </div>
       <div class="pcol pcol-highlight rev d2">
-        <div class="pcol-head">Fillers by Syringe 1ml</div>
+        <div class="pcol-head">Wypełniacze na strzykawkę 1ml</div>
         <div class="prow"><span>Belotero</span><strong>$420</strong></div>
         <div class="prow"><span>Juvederm</span><strong>$400</strong></div>
         <div class="prow"><span>Restylane</span><strong>$400</strong></div>
@@ -1884,17 +1880,16 @@
         <div class="prow"><span>Skinvive</span><strong>$300</strong></div>
       </div>
       <div class="pcol rev d3">
-        <div class="pcol-head">Biostimulators &amp; Meso</div>
-        <div class="prow"><span>Hair Restoration</span><strong>$300</strong></div>
-        <div class="prow"><span>Bio Stimulator Face Rejuran</span><strong>$400</strong></div>
-        <div class="prow"><span>Under Eyes Rejuran</span><strong>$300</strong></div>
-        <div class="prow"><span>Mesotherapy — Face</span><strong>$250</strong></div>
-        <div class="prow"><span>Meso — Face, Neck, Décolleté</span><strong>$400</strong></div>
-        <div class="prow"><span>Dissolve Filler (from)</span><strong>$150</strong></div>
+        <div class="pcol-head">Biostymulatoty i Meso</div>
+        <div class="prow"><span>Odbudowa Włosów</span><strong>$300</strong></div>
+        <div class="prow"><span>Biostymulator Twarzy Rejuran</span><strong>$400</strong></div>
+        <div class="prow"><span>Pod Oczy Rejuran</span><strong>$300</strong></div>
+        <div class="prow"><span>Mezoterapia — Twarz</span><strong>$250</strong></div>
+        <div class="prow"><span>Meso — Twarz, Szyja, Dekolt</span><strong>$400</strong></div>
+        <div class="prow"><span>Rozpuszczanie Wypełniacza (od)</span><strong>$150</strong></div>
       </div>
     </div>
-    <div class="pricing-note rev">Multi-syringe discounts available. Book a consultation to discuss your personalised
-      plan.</div>
+    <div class="pricing-note rev">Dostępne zniżki na wiele strzykawek. Zarezerwuj konsultację, aby omówić swój spersonalizowany plan.</div>
   </section>
 
 
@@ -1919,18 +1914,18 @@
       <!-- Eyebrow pill -->
       <div class="gsh-pill">
         <span class="gsh-pill-dot"></span>
-        <span class="gsh-pill-text">Gallery</span>
+        <span class="gsh-pill-text">Galeria</span>
         <span class="gsh-pill-dot"></span>
       </div>
 
       <!-- Massive split title -->
       <div class="gsh-title-wrap">
         <!-- Outline ghost text behind -->
-        <span class="gsh-title-ghost" aria-hidden="true">Precision</span>
+        <span class="gsh-title-ghost" aria-hidden="true">Precyzja</span>
         <!-- Foreground layered title -->
         <h2 class="gsh-title-main">
-          <span class="gsh-line-top">The Art <span class="gsh-line-top-of">of</span></span>
-          <span class="gsh-line-bottom"><em>Precision</em></span>
+          <span class="gsh-line-top">Sztuka <span class="gsh-line-top-of"></span></span>
+          <span class="gsh-line-bottom"><em>Precyzji</em></span>
         </h2>
       </div>
 
@@ -1941,8 +1936,8 @@
           <span class="gsh-slm-num">01</span>
         </div>
         <p class="gsh-subtitle-text">
-          Each image captures a moment of refined technique<br>
-          <em>and natural transformation.</em>
+          Każde zdjęcie uchwytuje moment wyrafinowanej techniki<br>
+          <em>i naturalnej transformacji.</em>
         </p>
         <div class="gsh-sub-right-mark">
           <span class="gsh-slm-num">—</span>
@@ -1971,71 +1966,71 @@
         <div class="gs-slide active" data-idx="0">
           <img src="images/lifestle1.jpg" alt="Lip Filler Precision">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Lip Augmentation</span>
-            <p>Precision micro-injection technique for natural, balanced results.</p>
+            <span class="gs-cap-tag">Powiększanie Ust</span>
+            <p>Precyzyjna technika mikro-iniekcji dla naturalnych, wyważonych efektów.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="1">
           <img src="images/FacialVolumetry.jpg" alt="Facial Filler Treatment">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Facial Volumetry</span>
-            <p>Anatomical mapping for sculpted, expressive facial contours.</p>
+            <span class="gs-cap-tag">Wolumetria Twarzy</span>
+            <p>Mapowanie anatomiczne dla rzeźbionych, wyrazistych konturów twarzy.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="2">
           <img src="images/image18.jpeg" alt="Hair Restoration">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Hair Restoration</span>
-            <p>Targeted scalp injections for biostimulation and hair regrowth.</p>
+            <span class="gs-cap-tag">Odbudowa Włosów</span>
+            <p>Celowane iniekcje skóry głowy dla biostymulacji i odrostu włosów.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="3">
           <img src="images/lifestle1.jpg" alt="Under Eye Treatment">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Dermal Fillers</span>
-            <p>Delicate under-eye treatment with ultra-fine precision needles.</p>
+            <span class="gs-cap-tag">Wypełniacze Skórne</span>
+            <p>Delikatny zabieg pod oczami z ultraprecyzyjnymi igłami.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="4">
           <img src="images/image9.webp" alt="Lip Filler">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Lip Enhancement</span>
-            <p>Subtle volume and definition for harmonious lip structure.</p>
+            <span class="gs-cap-tag">Upiększanie Ust</span>
+            <p>Subtelna objętość i definicja dla harmonijnej struktury ust.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="5">
           <img src="images/lifestyle3.jpg" alt="Mesotherapy Treatment">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Mesotherapy</span>
-            <p>Expert placement for sculpted, harmonious facial features.</p>
+            <span class="gs-cap-tag">Mezoterapia</span>
+            <p>Precyzyjne umieszczanie dla rzeźbionych, harmonijnych rysów twarzy.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="6">
           <img src="images/image6.webp" alt="Botox Treatment">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Botox Precision</span>
-            <p>Anatomical precision for smooth, natural-looking results.</p>
+            <span class="gs-cap-tag">Precyzja Botoksu</span>
+            <p>Anatomiczna precyzja dla gładkich, naturalnie wyglądających efektów.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="7">
           <img src="images/lifestyle3.jpg" alt="Lifestyle Results">
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Natural Radiance</span>
-            <p>Beautifully refined results tailored to each individual.</p>
+            <span class="gs-cap-tag">Naturalny Blask</span>
+            <p>Pięknie wyrafinowane efekty dostosowane do każdej osoby.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="8">
           <video src="videos/newvideo-intro.mp4" autoplay muted playsinline></video>
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Treatment Video</span>
-            <p>Precision injection technique demonstration.</p>
+            <span class="gs-cap-tag">Film Zabiegowy</span>
+            <p>Demonstracja precyzyjnej techniki iniekcji.</p>
           </div>
         </div>
         <div class="gs-slide" data-idx="9">
           <video src="videos/newvideo-intro1.mp4" autoplay muted playsinline></video>
           <div class="gs-slide-caption">
-            <span class="gs-cap-tag">Procedure Video</span>
-            <p>Watch the expert application process.</p>
+            <span class="gs-cap-tag">Film z Zabiegu</span>
+            <p>Obejrzyj ekspercki proces aplikacji.</p>
           </div>
         </div>  
       </div>
@@ -2122,34 +2117,29 @@
       <div class="meet-img-overlay"></div>
     </div>
     <div class="meet-text-col rev d2">
-      <div class="section-label">Your Practitioner</div>
+      <div class="section-label">Twoja Specjalistka</div>
       <h2>Katarzyna<br><em>Marcinec</em></h2>
-      <p>Katarzyna Marcinec is not only a highly experienced aesthetic specialist — she is an educator, a trainer, and a
-        corrector. She teaches advanced aesthetic techniques to medical professionals across Europe, shaping the next
-        generation of practitioners with the same precision she brings to every client interaction.</p>
-      <p>What sets Katarzyna apart is her mastery of corrections: expertly resolving complications, asymmetries, and
-        unsatisfactory results from prior treatments. Where others see a difficult case, she sees an opportunity to
-        restore what was lost. For Katarzyna, aesthetic medicine is more than a profession — it is a deeply felt art
-        form, and she approaches every face with the reverence and passion of a true artist.</p>
+      <p>Katarzyna Marcinec jest nie tylko wysoce doświadczoną specjalistką estetyki — jest edukatorką, trenerką i korektorką. Naucza zaawansowanych technik estetycznych specjalistów medycznych w całej Europie, kształtując następne pokolenie praktykujących z tą samą precyzją, jaką wnosi w każdą interakcję z klientem.</p>
+      <p>Tym, co wyróżnia Katarzynę, jest mistrzostwo w korektach: eksperckie rozwiązywanie komplikacji, asymetrii i niezadowalających efektów wcześniejszych zabiegów. Tam gdzie inni widzą trudny przypadek, ona widzi okazję do przywrócenia tego, co utracono. Dla Katarzyny medycyna estetyczna to coś więcej niż zawód — to głęboko odczuwana forma sztuki, i do każdej twarzy podchodzi z czcią i pasją prawdziwej artystki.</p>
       <div class="meet-creds">
         <div class="mc-item">
           <div class="mc-num">10+</div>
-          <div>Years in Medical Aesthetics</div>
+          <div>Lat w Medycynie Estetycznej</div>
         </div>
         <div class="mc-item">
           <div class="mc-num">EU</div>
-          <div>Certified Educator & Trainer</div>
+          <div>Certyfikowana Edukatorka i Trenerka</div>
         </div>
         <div class="mc-item">
           <div class="mc-num">✦</div>
-          <div>Correction Specialist</div>
+          <div>Specjalistka ds. Korekt</div>
         </div>
         <div class="mc-item">
           <div class="mc-num">★</div>
-          <div>International Certifications</div>
+          <div>Certyfikaty Międzynarodowe</div>
         </div>
       </div>
-      <a href="#contact" class="btn-gold-fill">Book with Katarzyna</a>
+      <a href="#contact" class="btn-gold-fill">Zarezerwuj u Katarzyny</a>
     </div>
   </section>
 
@@ -2164,14 +2154,11 @@
     <div class="corr-header rev">
       <div class="corr-label-row">
         <span class="corr-label-line"></span>
-        <span class="corr-label-text">Correction Specialist</span>
+        <span class="corr-label-text">Specjalistka ds. Korekt</span>
         <span class="corr-label-line"></span>
       </div>
-      <h2 class="corr-title">Where Others Stop,<br><em>Katarzyna Begins</em></h2>
-      <p class="corr-intro">Corrections are not just a service — they are a calling. For Katarzyna, restoring what was
-        lost or misplaced is the purest expression of her artistry. She has dedicated years to mastering the rarest and
-        most complex correction work in aesthetic medicine, giving clients a second chance at the results they deserved
-        the first time.</p>
+      <h2 class="corr-title">Gdzie Inni Się Zatrzymują,<br><em>Katarzyna Zaczyna</em></h2>
+      <p class="corr-intro">Korekty to nie tylko usługa — to powołanie. Dla Katarzyny przywracanie tego, co zostało utracone lub źle umieszczone, jest najczystszym wyrazem jej artyzmu. Poświęciła lata na opanowanie najrzadszych i najbardziej złożonych korekt w medycynie estetycznej, dając klientom drugą szansę na efekty, na które zasługiwali za pierwszym razem.</p>
     </div>
 
     <!-- Potency callout strip -->
@@ -2184,10 +2171,8 @@
           </svg>
         </div>
         <div class="corr-pot-text">
-          <strong>Full Medical Potency — Never Diluted</strong>
-          <span>Every neurotoxin and filler used at Finesse is pharmaceutical-grade and prepared at full clinical
-            strength. Over-diluted product is one of the leading causes of poor results and the corrections we see daily
-            — we never cut corners on potency.</span>
+          <strong>Pełna Moc Medyczna — Nigdy Nierozcieńczona</strong>
+          <span>Każda neurotoksyna i wypełniacz stosowane w Finesse są klasy farmaceutycznej i przygotowane w pełnej sile klinicznej. Nadmiernie rozcieńczony produkt jest jedną z głównych przyczyn złych efektów i korekt, z jakimi spotykamy się codziennie — nigdy nie oszczędzamy na sile.</span>
         </div>
       </div>
     </div>
@@ -2206,9 +2191,8 @@
                 opacity=".5" />
             </svg>
           </div>
-          <h4>Improperly Placed<br>Botox</h4>
-          <p>Correcting neurotoxin injected into the wrong muscle groups — causing unnatural tightness, uneven
-            relaxation, or failure to address the intended area.</p>
+          <h4>Nieprawidłowo Umieszczony<br>Botoks</h4>
+          <p>Korekcja neurotoksyny wstrzykniętej do niewłaściwych grup mięśniowych — powodującej nienaturalne napięcie, nierównomierne rozluźnienie lub brak efektu w zamierzonym obszarze.</p>
         </div>
       </div>
 
@@ -2222,9 +2206,8 @@
               <path d="M20 30h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".5" />
             </svg>
           </div>
-          <h4>Unbalanced Lip<br>Enhancements</h4>
-          <p>Dissolving and restoring asymmetric, overfilled, or unshapely lip filler — replacing "duck lip" results
-            with natural proportion and defined structure.</p>
+          <h4>Niezrównoważone<br>Powiększanie Ust</h4>
+          <p>Rozpuszczanie i przywracanie asymetrycznych, przepełnionych lub nieforemnych wypełniaczy ust — zastępowanie efektu "kaczych ust" naturalną proporcją i wyraźną strukturą.</p>
         </div>
       </div>
 
@@ -2240,9 +2223,8 @@
               <circle cx="24" cy="16" r="3" stroke="currentColor" stroke-width="1.2" opacity=".4" />
             </svg>
           </div>
-          <h4>Droopy Eyelids &amp;<br>Brow Ptosis</h4>
-          <p>Correcting Botox-induced eyelid drooping or fallen brows caused by migration into the levator muscle — one
-            of the most delicate and common complications.</p>
+          <h4>Opadające Powieki &amp;<br>Ptoza Brwi</h4>
+          <p>Korekcja opadania powiek lub opadnięcia brwi wywołanych botoksem wskutek migracji do mięśnia dźwigacza — jednego z najdelikatniejszych i najczęstszych powikłań.</p>
         </div>
       </div>
 
@@ -2257,8 +2239,8 @@
               <path d="M24 16v-4M20 12h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
             </svg>
           </div>
-          <h4>Filler Migration &amp;<br>Malar Mounds</h4>
-          <p>Removing filler that has shifted from its intended placement — including the telltale puffiness under the
+          <h4>Migracja Wypełniacza &amp;<br>Wybrzuszenia Policzkowe</h4>
+          <p>Usuwanie wypełniacza, który przesunął się z zamierzonego miejsca — w tym charakterystyczny obrzęk pod
             eyes and swelling along the cheek bones from migrated product.</p>
         </div>
       </div>
@@ -2387,10 +2369,9 @@
       <div class="corr-card rev d3 corr-card-cta">
         <div class="corr-card-inner corr-card-inner-cta">
           <div class="corr-cta-star">✦</div>
-          <h4>Unhappy with a<br>Previous Treatment?</h4>
-          <p>Katarzyna has seen it all — and corrected it all. If you've experienced any of these issues, or something
-            not listed here, book a confidential consultation.</p>
-          <a href="#contact" class="corr-cta-btn">Book a Correction Consult</a>
+          <h4>Niezadowolona z<br>Poprzedniego Zabiegu?</h4>
+          <p>Katarzyna widziała już wszystko — i wszystko skorygowała. Jeśli doświadczyłaś któregoś z tych problemów lub czegoś spoza tej listy, zarezerwuj poufną konsultację.</p>
+          <a href="#contact" class="corr-cta-btn">Zarezerwuj Konsultację Korygującą</a>
         </div>
       </div>
 
@@ -2735,7 +2716,7 @@
         <span class="av2h-tag-line"></span>
         <span class="av2h-tag-capsule">
           <span class="av2h-tag-pulse"></span>
-          Post-Treatment Care
+          Opieka Pozabiegowa
         </span>
         <span class="av2h-tag-line"></span>
       </div>
@@ -2743,15 +2724,15 @@
       <!-- Massive stacked display title -->
       <div class="av2h-display">
         <div class="av2h-display-row1">
-          <span class="av2h-d-outline" aria-hidden="true">Post</span>
-          <span class="av2h-d-solid">Post</span>
+          <span class="av2h-d-outline" aria-hidden="true">Po</span>
+          <span class="av2h-d-solid">Po</span>
         </div>
         <div class="av2h-display-row2">
-          <span class="av2h-d-outline" aria-hidden="true">Treatment</span>
-          <span class="av2h-d-solid av2h-d-mid">Treatment</span>
+          <span class="av2h-d-outline" aria-hidden="true">Zabiegu</span>
+          <span class="av2h-d-solid av2h-d-mid">Zabiegu</span>
         </div>
         <div class="av2h-display-row3">
-          <em class="av2h-d-em">Instructions</em>
+          <em class="av2h-d-em">Instrukcje</em>
         </div>
       </div>
 
@@ -2764,8 +2745,8 @@
           </svg>
         </div>
         <p class="av2h-meta-text">
-          Your results deserve the best care. Follow these steps to ensure
-          <em>optimal healing and lasting beauty.</em>
+          Twoje efekty zasługują na najlepszą opiekę. Postępuj zgodnie z tymi wskazówkami, aby zapewnić
+          <em>optymalne gojenie i trwałe piękno.</em>
         </p>
         <div class="av2h-meta-mark">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -2779,17 +2760,17 @@
       <div class="av2h-count-row">
         <span class="av2h-count-item">
           <strong>08</strong>
-          <span>Essential Steps</span>
+          <span>Kluczowych Kroków</span>
         </span>
         <span class="av2h-count-div"></span>
         <span class="av2h-count-item">
-          <strong>2 WK</strong>
-          <span>Recovery Period</span>
+          <strong>2 TYG</strong>
+          <span>Okres Rekonwalescencji</span>
         </span>
         <span class="av2h-count-div"></span>
         <span class="av2h-count-item">
-          <strong>EU</strong>
-          <span>Protocol Standard</span>
+          <strong>UE</strong>
+          <span>Standard Protokołu</span>
         </span>
       </div>
 
@@ -2810,8 +2791,8 @@
               <circle cx="24" cy="24" r="3" fill="currentColor" opacity=".4" />
             </svg>
           </div>
-          <h4>Avoid Touching<br>Injection Sites</h4>
-          <p>Do not massage, rub, or apply pressure to treated areas for at least 24 hours after the procedure.</p>
+          <h4>Unikaj Dotykania<br>Miejsc Iniekcji</h4>
+          <p>Nie masuj, nie trzyj i nie naciskaj leczonych obszarów przez co najmniej 24 godziny po zabiegu.</p>
           <div class="av2-card-tag">24 hrs</div>
           <div class="av2-card-border-anim"></div>
         </div>
@@ -2828,8 +2809,8 @@
               <path d="M20 30h8M24 26v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5" />
             </svg>
           </div>
-          <h4>Avoid Physical<br>Activity</h4>
-          <p>Avoid strenuous exercise or heavy lifting for 24 hours after treatment.</p>
+          <h4>Unikaj Aktywności<br>Fizycznej</h4>
+          <p>Unikaj intensywnych ćwiczeń lub dźwigania ciężarów przez 24 godziny po zabiegu.</p>
           <div class="av2-card-tag">24 hrs</div>
           <div class="av2-card-border-anim"></div>
         </div>
@@ -2847,9 +2828,9 @@
               <path d="M18 36h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5" />
             </svg>
           </div>
-          <h4>Avoid Heat<br>Exposure</h4>
-          <p>Avoid saunas, tanning beds, hot tubs, and excessive sun exposure for two weeks after treatment.</p>
-          <div class="av2-card-tag">2 weeks</div>
+          <h4>Unikaj Ekspozycji<br>na Ciepło</h4>
+          <p>Unikaj saun, solarium, jacuzzi i nadmiernego nasłonecznienia przez dwa tygodnie po zabiegu.</p>
+          <div class="av2-card-tag">2 tygodnie</div>
           <div class="av2-card-border-anim"></div>
         </div>
       </div>
@@ -2867,8 +2848,8 @@
               <path d="M30 14l4-4M34 14l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
             </svg>
           </div>
-          <h4>Avoid<br>Alcohol</h4>
-          <p>Do not consume alcohol for 24 hours after the procedure to minimize swelling and bruising.</p>
+          <h4>Unikaj<br>Alkoholu</h4>
+          <p>Nie spożywaj alkoholu przez 24 godziny po zabiegu, aby zminimalizować obrzęk i siniaki.</p>
           <div class="av2-card-tag">24 hrs</div>
           <div class="av2-card-border-anim"></div>
         </div>
@@ -2888,8 +2869,8 @@
               <path d="M28 10l4-4M32 10l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
             </svg>
           </div>
-          <h4>No Makeup<br>for 24 Hours</h4>
-          <p>Avoid applying makeup for the first 24 hours to reduce risk of irritation and infection.</p>
+          <h4>Brak Makijażu<br>przez 24 Godziny</h4>
+          <p>Unikaj nakładania makijażu przez pierwsze 24 godziny, aby zmniejszyć ryzyko podrażnienia i infekcji.</p>
           <div class="av2-card-tag">24 hrs</div>
           <div class="av2-card-border-anim"></div>
         </div>
@@ -2909,9 +2890,9 @@
                 stroke-linecap="round" />
             </svg>
           </div>
-          <h4>Skin<br>Moisturization</h4>
-          <p>Use gentle, fragrance-free moisturizers to support healing. Avoid retinoids or AHA/BHA acids.</p>
-          <div class="av2-card-tag">Essential</div>
+          <h4>Nawilżanie<br>Skóry</h4>
+          <p>Stosuj delikatne, bezzapachowe kremy nawilżające wspomagające gojenie. Unikaj retinoidów i kwasów AHA/BHA.</p>
+          <div class="av2-card-tag">Niezbędne</div>
           <div class="av2-card-border-anim"></div>
         </div>
       </div>
@@ -2929,9 +2910,9 @@
                 stroke-linecap="round" opacity=".6" />
             </svg>
           </div>
-          <h4>Arnica<br>Ointment</h4>
-          <p>Apply arnica ointment to reduce bruising or swelling if necessary following your treatment.</p>
-          <div class="av2-card-tag">If needed</div>
+          <h4>Maść<br>Arnikowa</h4>
+          <p>Stosuj maść arnikową w celu zmniejszenia siniaków lub obrzęku, jeśli to konieczne po zabiegu.</p>
+          <div class="av2-card-tag">W razie potrzeby</div>
           <div class="av2-card-border-anim"></div>
         </div>
       </div>
@@ -2952,10 +2933,9 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <h4>Follow-Up<br>Appointment</h4>
-          <p>A follow-up visit is recommended two weeks after treatment. For severe symptoms — contact your provider
-            immediately.</p>
-          <div class="av2-card-tag av2-card-tag-gold">2 weeks</div>
+          <h4>Wizyta<br>Kontrolna</h4>
+          <p>Wizyta kontrolna jest zalecana dwa tygodnie po zabiegu. W przypadku poważnych objawów — skontaktuj się z nami natychmiast.</p>
+          <div class="av2-card-tag av2-card-tag-gold">2 tygodnie</div>
           <div class="av2-card-border-anim"></div>
         </div>
       </div>
@@ -2965,7 +2945,7 @@
     <!-- Bottom note -->
     <div class="av2-footnote rev">
       <div class="av2-fn-line"></div>
-      <p>Questions about your aftercare? <a href="#contact">Contact us anytime →</a></p>
+      <p>Pytania dotyczące opieki pozabiegowej? <a href="#contact">Skontaktuj się z nami →</a></p>
       <div class="av2-fn-line"></div>
     </div>
 
@@ -2987,9 +2967,9 @@
         <span class="nf-hd-gem">◆</span>
         <span class="nf-hd-line"></span>
       </div>
-      <p class="nf-hd-eyebrow">Exclusive Offers &amp; Services</p>
-      <h2 class="nf-hd-title">Beyond the<br><em>Treatment Room</em></h2>
-      <p class="nf-hd-sub">Savings, celebrations &amp; care — wherever you are.</p>
+      <p class="nf-hd-eyebrow">Ekskluzywne Oferty i Usługi</p>
+      <h2 class="nf-hd-title">Poza<br><em>Gabinetem Zabiegowym</em></h2>
+      <p class="nf-hd-sub">Oszczędności, świętowania i opieka — gdziekolwiek jesteś.</p>
     </div>
 
     <!-- BENTO GRID -->
@@ -3003,14 +2983,14 @@
         <!-- Animated scrolling ticker -->
         <div class="nf-ribbon" aria-hidden="true">
           <div class="nf-ribbon-track">
-            <span>NEW CLIENT</span><span class="nf-rdot">◆</span>
-            <span>SEASONAL SAVES</span><span class="nf-rdot">◆</span>
-            <span>EXCLUSIVE OFFER</span><span class="nf-rdot">◆</span>
-            <span>FIRST VISIT</span><span class="nf-rdot">◆</span>
-            <span>NEW CLIENT</span><span class="nf-rdot">◆</span>
-            <span>SEASONAL SAVES</span><span class="nf-rdot">◆</span>
-            <span>EXCLUSIVE OFFER</span><span class="nf-rdot">◆</span>
-            <span>FIRST VISIT</span><span class="nf-rdot">◆</span>
+            <span>NOWA KLIENTKA</span><span class="nf-rdot">◆</span>
+            <span>SEZONOWE ZNIŻKI</span><span class="nf-rdot">◆</span>
+            <span>EKSKLUZYWNA OFERTA</span><span class="nf-rdot">◆</span>
+            <span>PIERWSZA WIZYTA</span><span class="nf-rdot">◆</span>
+            <span>NOWA KLIENTKA</span><span class="nf-rdot">◆</span>
+            <span>SEZONOWE ZNIŻKI</span><span class="nf-rdot">◆</span>
+            <span>EKSKLUZYWNA OFERTA</span><span class="nf-rdot">◆</span>
+            <span>PIERWSZA WIZYTA</span><span class="nf-rdot">◆</span>
           </div>
         </div>
 
@@ -3024,20 +3004,20 @@
             </svg>
           </div>
           <div class="nf-card-num">01</div>
-          <h3 class="nf-card-title">Exclusive<br><em>Discount Codes</em></h3>
-          <p class="nf-card-desc">Rotating promo codes for new &amp; returning clients. Validate instantly, apply
-            directly at booking.</p>
+          <h3 class="nf-card-title">Ekskluzywne<br><em>Kody Rabatowe</em></h3>
+          <p class="nf-card-desc">Rotacyjne kody promocyjne dla nowych i powracających klientek. Waliduj natychmiast, stosuj
+            bezpośrednio przy rezerwacji.</p>
 
           <!-- Live promo input -->
           <div class="nf-input-group">
-            <label class="nf-ilabel">Enter Promo Code</label>
+            <label class="nf-ilabel">Wprowadź Kod Promocyjny</label>
             <div class="nf-promo-wrap" id="nfPromoWrap">
               <div class="nf-promo-prefix">%</div>
               <input type="text" id="nfPromoInput" class="nf-promo-input" placeholder="E.G. FINESSE15" maxlength="20"
                 autocomplete="off" oninput="this.value=this.value.toUpperCase()"
                 onkeydown="if(event.key==='Enter')nfValidatePromo()">
               <button class="nf-promo-btn" id="nfPromoBtn" onclick="nfValidatePromo()">
-                <span id="nfPromoBtnLabel">Apply</span>
+                <span id="nfPromoBtnLabel">Zastosuj</span>
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
                   <path d="M1 5.5h9M5.5 1l4.5 4.5L5.5 10" stroke="currentColor" stroke-width="1.3"
                     stroke-linecap="round" stroke-linejoin="round" />
@@ -3051,7 +3031,7 @@
           <div class="nf-active-codes" id="nfActiveCodes">
             <div class="nf-ac-header">
               <span class="nf-ac-dot"></span>
-              <span class="nf-ac-title">Loading active offers…</span>
+              <span class="nf-ac-title">Ładowanie aktywnych ofert…</span>
             </div>
           </div>
         </div>
@@ -3064,7 +3044,7 @@
                 stroke-linejoin="round" />
             </svg>
           </button>
-          <button class="nf-cta-ghost" onclick="openComingSoonModal()">Book &amp; Apply</button>
+          <button class="nf-cta-ghost" onclick="openConsultModal()">Zarezerwuj i Zastosuj</button>
         </div>
       </div>
 
@@ -3096,31 +3076,31 @@
             </svg>
           </div>
           <div class="nf-card-num nf-num-blue">02</div>
-          <h3 class="nf-card-title nf-title-blue">Refer a Friend,<br><em>Both Save</em></h3>
-          <p class="nf-card-desc">Share the Finesse experience. When your friend books, you both earn an exclusive
-            discount — no limit on referrals.</p>
+          <h3 class="nf-card-title nf-title-blue">Poleć Przyjaciela,<br><em>Oboje Oszczędzacie</em></h3>
+          <p class="nf-card-desc">Podziel się doświadczeniem Finesse. Gdy Twoja przyjaciółka zarezerwuje, oboje zyskujecie ekskluzywny
+            rabat — bez limitu poleceń.</p>
 
           <!-- 3-step flow -->
           <div class="nf-steps">
             <div class="nf-step">
               <div class="nf-step-n nf-sn-blue">1</div>
-              <span>Refer your friend</span>
+              <span>Poleć przyjaciela</span>
             </div>
             <div class="nf-step-arrow nf-sa-blue">→</div>
             <div class="nf-step">
               <div class="nf-step-n nf-sn-blue">2</div>
-              <span>They mention your name</span>
+              <span>Podają Twoje imię</span>
             </div>
             <div class="nf-step-arrow nf-sa-blue">→</div>
             <div class="nf-step">
               <div class="nf-step-n nf-sn-blue">3</div>
-              <span>You both save</span>
+              <span>Oboje oszczędzacie</span>
             </div>
           </div>
 
           <div class="nf-refer-stat" id="nfReferStat">
             <span class="nf-rs-icon">✦</span>
-            <span id="nfReferCount">Loading referral stats…</span>
+            <span id="nfReferCount">Ładowanie statystyk poleceń…</span>
           </div>
         </div>
 
@@ -3132,7 +3112,7 @@
                 stroke-linejoin="round" />
             </svg>
           </button>
-          <button class="nf-cta-ghost" onclick="openComingSoonModal()">Book &amp; Mention</button>
+          <button class="nf-cta-ghost" onclick="openConsultModal()">Zarezerwuj i Wspomnij</button>
         </div>
       </div>
 
@@ -3158,23 +3138,23 @@
             </svg>
           </div>
           <div class="nf-card-num nf-num-rose">03</div>
-          <h3 class="nf-card-title nf-title-rose">Events<br><em>&amp; Parties</em></h3>
-          <p class="nf-card-desc">Elevate any occasion with a private group session. Exclusive pricing, custom packages,
-            complimentary consultation.</p>
+          <h3 class="nf-card-title nf-title-rose">Wydarzenia<br><em>i Imprezy</em></h3>
+          <p class="nf-card-desc">Wynieś każdą okazję na wyższy poziom dzięki prywatnej sesji grupowej. Ekskluzywne ceny, niestandardowe pakiety,
+            bezpłatna konsultacja.</p>
 
           <!-- Animated event type chips -->
           <div class="nf-evt-chips">
-            <span class="nf-chip nf-chip-rose">Bachelorette</span>
-            <span class="nf-chip nf-chip-rose">Birthday Party</span>
-            <span class="nf-chip nf-chip-rose">Corporate Wellness</span>
-            <span class="nf-chip nf-chip-rose">Girls' Night</span>
-            <span class="nf-chip nf-chip-rose">Groups of 4+</span>
+            <span class="nf-chip nf-chip-rose">Wieczór Panieński</span>
+            <span class="nf-chip nf-chip-rose">Urodziny</span>
+            <span class="nf-chip nf-chip-rose">Wellness Korporacyjny</span>
+            <span class="nf-chip nf-chip-rose">Wieczór Dla Pań</span>
+            <span class="nf-chip nf-chip-rose">Grupy 4+</span>
           </div>
 
           <div class="nf-evt-features">
-            <div class="nf-ef"><span class="nf-ef-dot nf-efd-rose">◆</span><span>Exclusive group pricing</span></div>
-            <div class="nf-ef"><span class="nf-ef-dot nf-efd-rose">◆</span><span>Free consultation included</span></div>
-            <div class="nf-ef"><span class="nf-ef-dot nf-efd-rose">◆</span><span>Custom treatment packages</span></div>
+            <div class="nf-ef"><span class="nf-ef-dot nf-efd-rose">◆</span><span>Ekskluzywne ceny grupowe</span></div>
+            <div class="nf-ef"><span class="nf-ef-dot nf-efd-rose">◆</span><span>Bezpłatna konsultacja w cenie</span></div>
+            <div class="nf-ef"><span class="nf-ef-dot nf-efd-rose">◆</span><span>Niestandardowe pakiety zabiegów</span></div>
           </div>
         </div>
 
@@ -3186,7 +3166,7 @@
                 stroke-linejoin="round" />
             </svg>
           </button>
-          <a href="tel:3133309999" class="nf-cta-ghost">☏ Call to Plan</a>
+          <a href="tel:3133309999" class="nf-cta-ghost">☏ Zadzwoń, aby zaplanować</a>
         </div>
       </div>
 
@@ -3220,12 +3200,12 @@
               </svg>
             </div>
             <div class="nf-card-num nf-num-teal">04</div>
-            <h3 class="nf-card-title nf-title-teal">Traveling Nurse<br><em>In-Home Care</em></h3>
-            <p class="nf-card-desc">Our licensed nurse delivers the full clinical suite to your home, hotel, or private
-              venue — complete privacy, same precision.</p>
+            <h3 class="nf-card-title nf-title-teal">Wizyta Domowa<br><em>Zabieg w Domu</em></h3>
+            <p class="nf-card-desc">Nasza licencjonowana pielęgniarka dostarcza pełen zakres kliniczny do Twojego domu, hotelu lub prywatnego
+              miejsca — pełna prywatność, ta sama precyzja.</p>
             <div class="nf-cred-badge">
               <div class="nf-cred-dot"></div>
-              <span>RN-Certified · Fully Insured · EU-Trained Protocols</span>
+              <span>Certyfikowana · W pełni ubezpieczona · Protokoły UE</span>
             </div>
           </div>
 
@@ -3235,29 +3215,29 @@
               <div class="nf-nf-row">
                 <span class="nf-nf-icon nf-nfi-teal">◆</span>
                 <div>
-                  <strong>Full Treatment Menu</strong>
-                  <span>Botox, fillers, biostimulators &amp; more at home</span>
+                  <strong>Pełne Menu Zabiegów</strong>
+                  <span>Botoks, wypełniacze, biostymulatoty i więcej w domu</span>
                 </div>
               </div>
               <div class="nf-nf-row">
                 <span class="nf-nf-icon nf-nfi-teal">◆</span>
                 <div>
-                  <strong>Same Clinical Standards</strong>
-                  <span>Identical European precision protocols as our spa</span>
+                  <strong>Te Same Standardy Kliniczne</strong>
+                  <span>Identyczne europejskie protokoły precyzji jak w naszym spa</span>
                 </div>
               </div>
               <div class="nf-nf-row">
                 <span class="nf-nf-icon nf-nfi-teal">◆</span>
                 <div>
-                  <strong>Ultimate Privacy</strong>
-                  <span>Ideal for high-profile clients &amp; busy professionals</span>
+                  <strong>Absolutna Prywatność</strong>
+                  <span>Idealne dla znanych klientek i zapracowanych profesjonalistów</span>
                 </div>
               </div>
               <div class="nf-nf-row">
                 <span class="nf-nf-icon nf-nfi-teal">◆</span>
                 <div>
-                  <strong>Flexible Scheduling</strong>
-                  <span>Individuals &amp; small private groups welcome</span>
+                  <strong>Elastyczny Harmonogram</strong>
+                  <span>Zapraszamy osoby indywidualne i małe grupy prywatne</span>
                 </div>
               </div>
             </div>
@@ -4564,18 +4544,18 @@
     </div>
     <div class="cta-veil"></div>
     <div class="cta-inner rev">
-      <div class="section-label cta-label">Contact / Book Now</div>
-      <h2>Schedule Your <em>Consultation</em></h2>
-      <p>Experience the power of European precision aesthetics. Book your consultation today and discover a refined
-        approach to aesthetic medicine.</p>
-      <button onclick="openComingSoonModal()" class="btn-gold-fill cta-btn">Request a Consultation</button>
+      <div class="section-label cta-label">Kontakt / Zarezerwuj</div>
+      <h2>Zaplanuj Swoją <em>Konsultację</em></h2>
+      <p>Doświadcz siły europejskiej estetyki precyzyjnej. Zarezerwuj konsultację już dziś i odkryj wyrafinowane
+        podejście do medycyny estetycznej.</p>
+      <button onclick="openConsultModal()" class="btn-gold-fill cta-btn">Poproś o Konsultację</button>
       <div class="cta-contacts">
         <a href="tel:3133309999">☏ (313) 330-9999</a>
         <a href="/cdn-cgi/l/email-protection#afcdc0c0c4efc9c6c1cadcdccac2cacbc6cccec3dcdfce81ccc0c2">✉ <span
             class="__cf_email__"
             data-cfemail="20424f4f4b6046494e455353454d45444943414c5350410e434f4d">[email&#160;protected]</span></a>
       </div>
-      <p class="cta-tagline">See the Difference. Feel the Difference.</p>
+      <p class="cta-tagline">Poczuj Różnicę. Doświadcz Różnicy.</p>
     </div>
   </section>
 
@@ -4583,11 +4563,11 @@
   <footer>
     <div class="f-logo">Finesse <em>Medical Spa</em></div>
     <div class="f-links">
-      <a href="#about">About</a>
-      <a href="#treatments">Treatments</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#aftercare">Aftercare</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">O nas</a>
+      <a href="#treatments">Zabiegi</a>
+      <a href="#pricing">Cennik</a>
+      <a href="#aftercare">Opieka Pozabiegowa</a>
+      <a href="#contact">Kontakt</a>
 
     </div>
   </footer>
@@ -4619,9 +4599,9 @@
         console.warn('Could not load chat answers from Supabase:', e.message);
         // Fallback to defaults
         cachedChatAnswers = [
-          { question: 'New client offer?', answer: 'Welcome! First-time clients receive <strong>15% off</strong> their first treatment. Book your consultation today to claim your exclusive offer.' },
-          { question: 'What codes are available?', answer: 'Check our available promo codes at the time of booking. Ask our team for the latest offers!' },
-          { question: 'Refer a friend?', answer: 'Refer a friend and both of you get special discounts. Ask our team about our referral program!' }
+          { question: 'New client offer?', answer: 'Witamy! Klientki po raz pierwszy otrzymują <strong>15% zniżki</strong> na pierwszy zabieg. Zarezerwuj konsultację już dziś, aby skorzystać z ekskluzywnej oferty.' },
+          { question: 'What codes are available?', answer: 'Sprawdź dostępne kody promocyjne przy rezerwacji. Zapytaj nasz zespół o najnowsze oferty!' },
+          { question: 'Refer a friend?', answer: 'Poleć przyjaciela i oboje otrzymacie specjalne zniżki. Zapytaj nasz zespół o program poleceń!' }
         ];
         return cachedChatAnswers;
       }
@@ -4638,9 +4618,9 @@
     function loadMessageAssistant() {
       // Use cached chat answers from database
       const questions = cachedChatAnswers ? cachedChatAnswers.map(a => ({ q: a.question, a: a.answer })) : [
-        { q: 'New client offer?', a: 'Welcome! First-time clients receive <strong>15% off</strong> their first treatment. Book your consultation today to claim your exclusive offer.' },
-        { q: 'What codes are available?', a: 'Check our available promo codes at the time of booking. Ask our team for the latest offers!' },
-        { q: 'Refer a friend?', a: 'Refer a friend and both of you get special discounts. Ask our team about our referral program!' }
+        { q: 'New client offer?', a: 'Witamy! Klientki po raz pierwszy otrzymują <strong>15% zniżki</strong> na pierwszy zabieg. Zarezerwuj konsultację już dziś, aby skorzystać z ekskluzywnej oferty.' },
+        { q: 'What codes are available?', a: 'Sprawdź dostępne kody promocyjne przy rezerwacji. Zapytaj nasz zespół o najnowsze oferty!' },
+        { q: 'Refer a friend?', a: 'Poleć przyjaciela i oboje otrzymacie specjalne zniżki. Zapytaj nasz zespół o program poleceń!' }
       ];
 
       let html = '';
@@ -4899,8 +4879,8 @@
 
       <div class="cm-header">
         <div class="cm-eyebrow">Finesse Medical Spa</div>
-        <h2 id="cm-title" class="cm-title">Request a <em>Consultation</em></h2>
-        <p class="cm-subtitle">Experience European precision aesthetics. We will reach out within 24 hours.</p>
+        <h2 id="cm-title" class="cm-title">Poproś o <em>Konsultację</em></h2>
+        <p class="cm-subtitle">Doświadcz europejskiej estetyki precyzyjnej. Skontaktujemy się w ciągu 24 godzin.</p>
       </div>
 
       <!-- ── Service Type Selector ── -->
@@ -4908,19 +4888,19 @@
         <button type="button" class="cm-type-btn active" data-type="consultation"
           onclick="cmSwitchType('consultation',this)">
           <span class="cm-type-icon">✦</span>
-          <span class="cm-type-label">Consultation</span>
+          <span class="cm-type-label">Konsultacja</span>
         </button>
         <button type="button" class="cm-type-btn" data-type="referral" onclick="cmSwitchType('referral',this)">
           <span class="cm-type-icon">◈</span>
-          <span class="cm-type-label">Refer a Friend</span>
+          <span class="cm-type-label">Poleć Przyjaciela</span>
         </button>
         <button type="button" class="cm-type-btn" data-type="event" onclick="cmSwitchType('event',this)">
           <span class="cm-type-icon">◇</span>
-          <span class="cm-type-label">Events & Parties</span>
+          <span class="cm-type-label">Wydarzenia i Imprezy</span>
         </button>
         <button type="button" class="cm-type-btn" data-type="inhome" onclick="cmSwitchType('inhome',this)">
           <span class="cm-type-icon">⟡</span>
-          <span class="cm-type-label">In-Home Care</span>
+          <span class="cm-type-label">Zabieg w Domu</span>
         </button>
       </div>
 
@@ -4929,37 +4909,37 @@
       ══════════════════════════════════ -->
       <div class="cm-form-section active" id="cm-form-consultation">
         <div class="cm-steps">
-          <div class="cm-step active" data-step="1"><span>1</span> Personal Info</div>
+          <div class="cm-step active" data-step="1"><span>1</span> Dane Osobowe</div>
           <div class="cm-step-line"></div>
-          <div class="cm-step" data-step="2"><span>2</span> Treatment</div>
+          <div class="cm-step" data-step="2"><span>2</span> Zabieg</div>
           <div class="cm-step-line"></div>
-          <div class="cm-step" data-step="3"><span>3</span> Schedule</div>
+          <div class="cm-step" data-step="3"><span>3</span> Termin</div>
         </div>
 
         <form id="consultForm" class="cm-form" novalidate>
           <div class="cm-page active" data-page="1">
             <div class="cm-field-group">
               <div class="cm-field">
-                <label for="cm-fname">First Name</label>
-                <input type="text" id="cm-fname" name="first_name" placeholder="Your first name" required
+                <label for="cm-fname">Imię</label>
+                <input type="text" id="cm-fname" name="first_name" placeholder="Twoje imię" required
                   autocomplete="given-name">
                 <div class="cm-field-line"></div>
               </div>
               <div class="cm-field">
-                <label for="cm-lname">Last Name</label>
-                <input type="text" id="cm-lname" name="last_name" placeholder="Your last name"
+                <label for="cm-lname">Nazwisko</label>
+                <input type="text" id="cm-lname" name="last_name" placeholder="Twoje nazwisko"
                   autocomplete="family-name">
                 <div class="cm-field-line"></div>
               </div>
             </div>
             <div class="cm-field">
-              <label for="cm-email">Email Address</label>
+              <label for="cm-email">Adres E-mail</label>
               <input type="email" id="cm-email" name="email" placeholder="you@example.com" required
                 autocomplete="email">
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="cm-phone">Phone Number</label>
+              <label for="cm-phone">Numer Telefonu</label>
               <input type="tel" id="cm-phone" name="phone" placeholder="(313) 000-0000" autocomplete="tel">
               <div class="cm-field-line"></div>
             </div>
@@ -4967,11 +4947,11 @@
 
           <div class="cm-page" data-page="2">
             <div class="cm-field">
-              <label>Injectable Treatments <span class="cm-optional">(select one or more)</span></label>
+              <label>Zabiegi Iniekcyjne <span class="cm-optional">(wybierz jeden lub więcej)</span></label>
               <div class="cm-treatment-categorized">
                 <div class="cm-treat-category">
                   <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
-                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Botox</span>
+                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Botoks</span>
                   </button>
                   <div class="cm-treat-category-items">
                     <label class="cm-treat-sub-option"><input type="checkbox" name="treatments"
@@ -4986,7 +4966,7 @@
                 </div>
                 <div class="cm-treat-category">
                   <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
-                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Lip Augmentation</span>
+                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Powiększanie Ust</span>
                   </button>
                   <div class="cm-treat-category-items">
                     <label class="cm-treat-sub-option"><input type="checkbox" name="treatments"
@@ -4999,7 +4979,7 @@
                 </div>
                 <div class="cm-treat-category">
                   <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
-                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Facial Volumetry</span>
+                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Wolumetria Twarzy</span>
                   </button>
                   <div class="cm-treat-category-items">
                     <label class="cm-treat-sub-option"><input type="checkbox" name="treatments"
@@ -5030,7 +5010,7 @@
                 </div>
                 <div class="cm-treat-category">
                   <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
-                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Mesotherapy</span>
+                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Mezoterapia</span>
                   </button>
                   <div class="cm-treat-category-items">
                     <label class="cm-treat-sub-option"><input type="checkbox" name="treatments"
@@ -5045,7 +5025,7 @@
                 </div>
                 <div class="cm-treat-category">
                   <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
-                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Dermal Fillers</span>
+                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Wypełniacze Skórne</span>
                   </button>
                   <div class="cm-treat-category-items">
                     <label class="cm-treat-sub-option"><input type="checkbox" name="treatments"
@@ -5060,7 +5040,7 @@
                 </div>
                 <div class="cm-treat-category">
                   <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
-                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Biostimulators</span>
+                    <span class="cm-category-icon">▸</span><span class="cm-category-name">Biostymulatoty</span>
                   </button>
                   <div class="cm-treat-category-items">
                     <label class="cm-treat-sub-option"><input type="checkbox" name="treatments"
@@ -5079,21 +5059,20 @@
                 </div>
               </div>
               <div class="cm-selected-treats" id="cmSelectedTreats"></div>
-              <div class="cm-treatment-note">Multi-syringe discounts available. Book a consultation to discuss your
-                personalised plan.</div>
+              <div class="cm-treatment-note">Dostępne zniżki na wiele strzykawek. Zarezerwuj konsultację, aby omówić swój spersonalizowany plan.</div>
             </div>
             <div class="cm-field">
-              <label for="cm-message">Additional Notes <span class="cm-optional">(optional)</span></label>
-              <textarea id="cm-message" name="message" placeholder="Tell us about your goals or any concerns..."
+              <label for="cm-message">Dodatkowe Uwagi <span class="cm-optional">(opcjonalnie)</span></label>
+              <textarea id="cm-message" name="message" placeholder="Powiedz nam o swoich celach lub obawach..."
                 rows="3"></textarea>
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="cm-promo">Promo Code <span class="cm-optional">(optional)</span></label>
+              <label for="cm-promo">Kod Promocyjny <span class="cm-optional">(opcjonalnie)</span></label>
               <div style="display:flex;gap:8px;">
-                <input type="text" id="cm-promo" name="promo_code" placeholder="Enter promo code..." style="flex:1;"
+                <input type="text" id="cm-promo" name="promo_code" placeholder="Wprowadź kod promocyjny..." style="flex:1;"
                   oninput="validatePromoCode()">
-                <button type="button" class="cm-promo-apply-btn" onclick="validatePromoCode()">Apply</button>
+                <button type="button" class="cm-promo-apply-btn" onclick="validatePromoCode()">Zastosuj</button>
               </div>
               <div id="cm-promo-message" style="margin-top:8px;font-size:11px;color:rgba(201,169,110,.7);display:none;">
               </div>
@@ -5103,7 +5082,7 @@
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="cm-image">Upload Your Photo <span class="cm-optional">(optional)</span></label>
+              <label for="cm-image">Prześlij Swoje Zdjęcie <span class="cm-optional">(opcjonalnie)</span></label>
               <div class="cm-image-upload">
                 <input type="file" id="cm-image" name="image" accept="image/*" style="display:none">
                 <button type="button" class="cm-image-input-btn" onclick="document.getElementById('cm-image').click()">
@@ -5111,15 +5090,15 @@
                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor"
                       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <span id="cm-image-label">Choose Image</span>
+                  <span id="cm-image-label">Wybierz Zdjęcie</span>
                 </button>
                 <div id="cm-image-preview" style="display:none; margin-top:12px;">
                   <img id="cm-image-thumb" src="" alt="Preview"
                     style="max-width:100%;max-height:120px;border-radius:2px;border:1px solid rgba(201,169,110,.2);">
                   <div class="cm-image-controls">
                     <button type="button" class="cm-image-change"
-                      onclick="document.getElementById('cm-image').click()">Change</button>
-                    <button type="button" class="cm-image-remove" onclick="cmClearImage()">Remove</button>
+                      onclick="document.getElementById('cm-image').click()">Zmień</button>
+                    <button type="button" class="cm-image-remove" onclick="cmClearImage()">Usuń</button>
                   </div>
                 </div>
               </div>
@@ -5129,14 +5108,14 @@
           <div class="cm-page" data-page="3">
             <div class="cm-field-group">
               <div class="cm-field">
-                <label for="cm-date">Preferred Date</label>
+                <label for="cm-date">Preferowana Data</label>
                 <input type="date" id="cm-date" name="preferred_date" required>
                 <div class="cm-field-line"></div>
               </div>
               <div class="cm-field">
-                <label for="cm-time">Preferred Time</label>
+                <label for="cm-time">Preferowana Godzina</label>
                 <select id="cm-time" name="preferred_time" required>
-                  <option value="" disabled selected>Select a time</option>
+                  <option value="" disabled selected>Wybierz godzinę</option>
                   <option>9:00 AM</option>
                   <option>10:00 AM</option>
                   <option>11:00 AM</option>
@@ -5150,25 +5129,25 @@
                 <div class="cm-field-line"></div>
               </div>
             </div>
-            <div id="cm-blocked-info" style="font-size:0.82rem;color:rgba(250,246,240,0.6);margin-top:4px;">Select a
-              date to view available slots.</div>
+            <div id="cm-blocked-info" style="font-size:0.82rem;color:rgba(250,246,240,0.6);margin-top:4px;">Wybierz
+              datę, aby zobaczyć dostępne terminy.</div>
             <div id="cm-available-times" class="cm-available-times" style="margin-top:8px;"></div>
             <div class="cm-field" style="margin-bottom:16px;margin-top:16px;">
-              <label>How did you hear about us?</label>
+              <label>Skąd o nas wiesz?</label>
               <div class="cm-radio-group">
                 <label class="cm-radio"><input type="radio" name="referral"
                     value="Instagram"><span>Instagram</span></label>
                 <label class="cm-radio"><input type="radio" name="referral" value="Google"><span>Google</span></label>
                 <label class="cm-radio"><input type="radio" name="referral"
-                    value="Referral"><span>Referral</span></label>
-                <label class="cm-radio"><input type="radio" name="referral" value="Other"><span>Other</span></label>
+                    value="Referral"><span>Polecenie</span></label>
+                <label class="cm-radio"><input type="radio" name="referral" value="Other"><span>Inne</span></label>
               </div>
             </div>
             <div class="cm-privacy">
               <label class="cm-checkbox">
                 <input type="checkbox" id="cm-consent" required>
                 <span class="cm-checkmark"></span>
-                <span>I consent to being contacted by Finesse Medical Spa regarding my consultation request.</span>
+                <span>Wyrażam zgodę na kontakt ze strony Finesse Medical Spa w sprawie mojej prośby o konsultację.</span>
               </label>
             </div>
           </div>
@@ -5190,7 +5169,7 @@
             </svg>
           </button>
           <button type="button" class="cm-btn-submit" id="cmSubmit" onclick="cmSubmit()" style="display:none">
-            <span class="cm-btn-text">Confirm Consultation</span>
+            <span class="cm-btn-text">Potwierdź Konsultację</span>
             <span class="cm-btn-loader" style="display:none">
               <svg class="cm-spin" width="16" height="16" viewBox="0 0 18 18" fill="none">
                 <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="35"
@@ -5207,32 +5186,32 @@
       ══════════════════════════════════ -->
       <div class="cm-form-section" id="cm-form-referral">
         <div class="cm-section-intro">
-          <div class="cm-section-badge">◈ Refer a Friend</div>
-          <p class="cm-section-desc">Share the Finesse experience. When your friend books their first consultation, both
-            of you receive an exclusive reward.</p>
+          <div class="cm-section-badge">◈ Poleć Przyjaciela</div>
+          <p class="cm-section-desc">Podziel się doświadczeniem Finesse. Gdy Twoja przyjaciółka zarezerwuje pierwszą konsultację, oboje
+            otrzymacie ekskluzywną nagrodę.</p>
         </div>
         <form id="referralForm" class="cm-form" novalidate>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="rf-your-name">Your Name</label>
+              <label for="rf-your-name">Twoje Imię i Nazwisko</label>
               <input type="text" id="rf-your-name" name="referrer_name" placeholder="Your full name" required>
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="rf-your-email">Your Email</label>
+              <label for="rf-your-email">Twój E-mail</label>
               <input type="email" id="rf-your-email" name="referrer_email" placeholder="you@example.com" required>
               <div class="cm-field-line"></div>
             </div>
           </div>
-          <div class="cm-divider-line"><span>Friend's Details</span></div>
+          <div class="cm-divider-line"><span>Dane Przyjaciela</span></div>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="rf-friend-name">Friend's Name <span class="cm-optional">(optional)</span></label>
+              <label for="rf-friend-name">Imię Przyjaciela <span class="cm-optional">(opcjonalnie)</span></label>
               <input type="text" id="rf-friend-name" name="referred_name" placeholder="Friend's name">
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="rf-friend-email">Friend's Email</label>
+              <label for="rf-friend-email">E-mail Przyjaciela</label>
               <input type="email" id="rf-friend-email" name="referred_email" placeholder="friend@example.com" required>
               <div class="cm-field-line"></div>
             </div>
@@ -5240,17 +5219,17 @@
           <div class="cm-referral-reward-box">
             <div class="cm-reward-item">
               <span class="cm-reward-icon">✦</span>
-              <div><strong>You receive</strong> a thank-you discount on your next visit</div>
+              <div><strong>Ty otrzymujesz</strong> zniżkę z podziękowaniem na następną wizytę</div>
             </div>
             <div class="cm-reward-item">
               <span class="cm-reward-icon">✦</span>
-              <div><strong>Your friend receives</strong> a new-client welcome discount</div>
+              <div><strong>Twoja przyjaciółka otrzymuje</strong> zniżkę powitalną dla nowych klientek</div>
             </div>
           </div>
         </form>
         <div class="cm-nav" style="justify-content:flex-end;">
           <button type="button" class="cm-btn-submit" onclick="cmSubmitReferral()">
-            <span class="cm-btn-text">Send Referral</span>
+            <span class="cm-btn-text">Wyślij Polecenie</span>
             <span class="cm-btn-loader" style="display:none"><svg class="cm-spin" width="16" height="16"
                 viewBox="0 0 18 18" fill="none">
                 <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="35"
@@ -5266,82 +5245,81 @@
       ══════════════════════════════════ -->
       <div class="cm-form-section" id="cm-form-event">
         <div class="cm-section-intro">
-          <div class="cm-section-badge">◇ Events & Parties</div>
-          <p class="cm-section-desc">Bring Finesse to your celebration. We offer exclusive in-spa or on-location
-            aesthetic experiences for private events, bachelorette parties, and corporate gatherings.</p>
+          <div class="cm-section-badge">◇ Wydarzenia i Imprezy</div>
+          <p class="cm-section-desc">Sprowadź Finesse do swojej uroczystości. Oferujemy ekskluzywne doświadczenia estetyczne w spa lub na miejscu dla prywatnych wydarzeń, wieczorów panieńskich i spotkań korporacyjnych.</p>
         </div>
         <form id="eventForm" class="cm-form" novalidate>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="ev-name">Contact Name</label>
+              <label for="ev-name">Imię i Nazwisko</label>
               <input type="text" id="ev-name" name="contact_name" placeholder="Your full name" required>
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="ev-email">Email Address</label>
+              <label for="ev-email">Adres E-mail</label>
               <input type="email" id="ev-email" name="contact_email" placeholder="you@example.com" required>
               <div class="cm-field-line"></div>
             </div>
           </div>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="ev-phone">Phone Number</label>
+              <label for="ev-phone">Numer Telefonu</label>
               <input type="tel" id="ev-phone" name="contact_phone" placeholder="(313) 000-0000">
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="ev-guests">Estimated Guests</label>
+              <label for="ev-guests">Szacowana Liczba Gości</label>
               <input type="number" id="ev-guests" name="guest_count" placeholder="e.g. 10" min="2" max="200">
               <div class="cm-field-line"></div>
             </div>
           </div>
           <div class="cm-field">
-            <label>Event Type</label>
+            <label>Typ Wydarzenia</label>
             <div class="cm-radio-group">
               <label class="cm-radio"><input type="radio" name="event_type"
-                  value="Bachelorette Party"><span>Bachelorette</span></label>
+                  value="Bachelorette Party"><span>Wieczór Panieński</span></label>
               <label class="cm-radio"><input type="radio" name="event_type"
-                  value="Birthday Party"><span>Birthday</span></label>
+                  value="Birthday Party"><span>Urodziny</span></label>
               <label class="cm-radio"><input type="radio" name="event_type"
-                  value="Corporate Event"><span>Corporate</span></label>
-              <label class="cm-radio"><input type="radio" name="event_type" value="Private Gathering"><span>Private
-                  Gathering</span></label>
-              <label class="cm-radio"><input type="radio" name="event_type" value="Other"><span>Other</span></label>
+                  value="Corporate Event"><span>Firmowe</span></label>
+              <label class="cm-radio"><input type="radio" name="event_type" value="Private Gathering"><span>Spotkanie
+                  Prywatne</span></label>
+              <label class="cm-radio"><input type="radio" name="event_type" value="Other"><span>Inne</span></label>
             </div>
           </div>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="ev-date">Preferred Event Date</label>
+              <label for="ev-date">Preferowana Data Wydarzenia</label>
               <input type="date" id="ev-date" name="event_date">
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="ev-time">Preferred Time</label>
+              <label for="ev-time">Preferowana Godzina</label>
               <select id="ev-time" name="event_time">
-                <option value="" disabled selected>Select time</option>
-                <option>Morning (9 AM – 12 PM)</option>
-                <option>Afternoon (12 PM – 4 PM)</option>
-                <option>Evening (4 PM – 8 PM)</option>
+                <option value="" disabled selected>Wybierz godzinę</option>
+                <option>Rano (9:00 – 12:00)</option>
+                <option>Południe (12:00 – 16:00)</option>
+                <option>Wieczór (16:00 – 20:00)</option>
               </select>
               <div class="cm-field-line"></div>
             </div>
           </div>
           <div class="cm-field">
-            <label for="ev-location">Preferred Location <span class="cm-optional">(optional)</span></label>
-            <input type="text" id="ev-location" name="location" placeholder="In-spa or your venue address">
+            <label for="ev-location">Preferowana Lokalizacja <span class="cm-optional">(opcjonalnie)</span></label>
+            <input type="text" id="ev-location" name="location" placeholder="W spa lub adres Twojego miejsca">
             <div class="cm-field-line"></div>
           </div>
           <div class="cm-field">
-            <label for="ev-notes">Special Requests <span class="cm-optional">(optional)</span></label>
+            <label for="ev-notes">Specjalne Życzenia <span class="cm-optional">(opcjonalnie)</span></label>
             <textarea id="ev-notes" name="notes"
-              placeholder="Tell us about your vision, treatments of interest, or any special requirements..."
+              placeholder="Opowiedz nam o swojej wizji, interesujących zabiegach lub specjalnych wymaganiach..."
               rows="3"></textarea>
             <div class="cm-field-line"></div>
           </div>
         </form>
         <div class="cm-nav" style="justify-content:flex-end;">
           <button type="button" class="cm-btn-submit" onclick="cmSubmitEvent()">
-            <span class="cm-btn-text">Submit Event Request</span>
+            <span class="cm-btn-text">Wyślij Zapytanie o Wydarzenie</span>
             <span class="cm-btn-loader" style="display:none"><svg class="cm-spin" width="16" height="16"
                 viewBox="0 0 18 18" fill="none">
                 <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="35"
@@ -5357,69 +5335,68 @@
       ══════════════════════════════════ -->
       <div class="cm-form-section" id="cm-form-inhome">
         <div class="cm-section-intro">
-          <div class="cm-section-badge">⟡ In-Home Care</div>
-          <p class="cm-section-desc">Luxury aesthetic treatments delivered to your doorstep by our traveling nurse
-            specialist. Available within select service areas.</p>
+          <div class="cm-section-badge">⟡ Zabieg w Domu</div>
+          <p class="cm-section-desc">Luksusowe zabiegi estetyczne dostarczone do Twoich drzwi przez naszą specjalistkę. Dostępne w wybranych obszarach obsługi.</p>
         </div>
         <form id="inhomeForm" class="cm-form" novalidate>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="ih-name">Patient Name</label>
+              <label for="ih-name">Imię i Nazwisko</label>
               <input type="text" id="ih-name" name="patient_name" placeholder="Your full name" required>
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="ih-email">Email Address</label>
+              <label for="ih-email">Adres E-mail</label>
               <input type="email" id="ih-email" name="patient_email" placeholder="you@example.com" required>
               <div class="cm-field-line"></div>
             </div>
           </div>
           <div class="cm-field">
-            <label for="ih-phone">Phone Number</label>
+            <label for="ih-phone">Numer Telefonu</label>
             <input type="tel" id="ih-phone" name="patient_phone" placeholder="(313) 000-0000">
             <div class="cm-field-line"></div>
           </div>
-          <div class="cm-divider-line"><span>Service Address</span></div>
+          <div class="cm-divider-line"><span>Adres Usługi</span></div>
           <div class="cm-field">
-            <label for="ih-address">Street Address</label>
+            <label for="ih-address">Adres Ulicy</label>
             <input type="text" id="ih-address" name="address" placeholder="123 Main St" required>
             <div class="cm-field-line"></div>
           </div>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="ih-city">City</label>
+              <label for="ih-city">Miasto</label>
               <input type="text" id="ih-city" name="city" placeholder="Detroit">
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="ih-zip">ZIP Code</label>
+              <label for="ih-zip">Kod Pocztowy</label>
               <input type="text" id="ih-zip" name="zip" placeholder="48201">
               <div class="cm-field-line"></div>
             </div>
           </div>
           <div class="cm-field">
-            <label for="ih-treatment">Treatment of Interest <span class="cm-optional">(optional)</span></label>
+            <label for="ih-treatment">Interesujący Zabieg <span class="cm-optional">(opcjonalnie)</span></label>
             <select id="ih-treatment" name="treatment">
-              <option value="" disabled selected>Select a treatment</option>
-              <option>Botox</option>
-              <option>Lip Augmentation</option>
-              <option>Facial Volumetry / Fillers</option>
-              <option>Mesotherapy</option>
-              <option>Biostimulators</option>
-              <option>Multiple / Unsure — Consultation</option>
+              <option value="" disabled selected>Wybierz zabieg</option>
+              <option>Botoks</option>
+              <option>Powiększanie Ust</option>
+              <option>Wolumetria Twarzy / Wypełniacze</option>
+              <option>Mezoterapia</option>
+              <option>Biostymulatoty</option>
+              <option>Kilka / Niepewna — Konsultacja</option>
             </select>
             <div class="cm-field-line"></div>
           </div>
           <div class="cm-field-group">
             <div class="cm-field">
-              <label for="ih-date">Preferred Date</label>
+              <label for="ih-date">Preferowana Data</label>
               <input type="date" id="ih-date" name="preferred_date">
               <div class="cm-field-line"></div>
             </div>
             <div class="cm-field">
-              <label for="ih-time">Preferred Time</label>
+              <label for="ih-time">Preferowana Godzina</label>
               <select id="ih-time" name="preferred_time">
-                <option value="" disabled selected>Select time</option>
+                <option value="" disabled selected>Wybierz godzinę</option>
                 <option>9:00 AM</option>
                 <option>10:00 AM</option>
                 <option>11:00 AM</option>
@@ -5434,14 +5411,14 @@
             </div>
           </div>
           <div class="cm-field">
-            <label for="ih-notes">Medical Notes / Allergies <span class="cm-optional">(optional)</span></label>
+            <label for="ih-notes">Uwagi Medyczne / Alergie <span class="cm-optional">(opcjonalnie)</span></label>
             <textarea id="ih-notes" name="medical_notes"
-              placeholder="Any allergies, medications, or relevant medical history..." rows="3"></textarea>
+              placeholder="Alergie, leki lub istotna historia medyczna..." rows="3"></textarea>
             <div class="cm-field-line"></div>
           </div>
           <div class="cm-field">
             <label for="ih-promo">Promo Code <span class="cm-optional">(optional)</span></label>
-            <input type="text" id="ih-promo" name="promo_code" placeholder="Enter promo code...">
+            <input type="text" id="ih-promo" name="promo_code" placeholder="Wprowadź kod promocyjny...">
             <div class="cm-field-line"></div>
           </div>
           <div class="cm-privacy">
@@ -6169,7 +6146,7 @@
       if (btn) btn.classList.add('active');
       // Update title/subtitle
       const titles = {
-        consultation: ['Request a <em>Consultation</em>', 'Experience European precision aesthetics. We will reach out within 24 hours.'],
+        consultation: ['Poproś o <em>Konsultację</em>', 'Doświadcz europejskiej estetyki precyzyjnej. Skontaktujemy się w ciągu 24 godzin.'],
         referral: ['Refer a <em>Friend</em>', 'Share the Finesse experience and both receive an exclusive reward.'],
         event: ['Events &amp; <em>Parties</em>', 'Exclusive aesthetic experiences for your private celebration or gathering.'],
         inhome: ['In-Home <em>Care</em>', 'Luxury aesthetic treatments delivered by our traveling nurse specialist.']
@@ -7915,7 +7892,7 @@ If you learn the visitor's name during conversation, address them personally. Al
           .replace(/\*(.*?)\*/g, '<em>$1</em>');
         const hasCTA = /book|consult|appointment|schedule/i.test(text);
         const extra = hasCTA
-          ? `<br><button class="chat-book-cta" onclick="openComingSoonModal();toggleChat()">Book a Consultation ✦</button>`
+          ? `<br><button class="chat-book-cta" onclick="openConsultModal();toggleChat()">Book a Consultation ✦</button>`
           : '';
         appendMessage('bot', formatted + extra, '✦', true);
       }
@@ -8098,17 +8075,17 @@ If you learn the visitor's name during conversation, address them personally. Al
         </div>
       </div>
       <div class="nf-mfield">
-        <label>Event Type</label>
+        <label>Typ Wydarzenia</label>
         <div class="nf-evt-type-grid">
           <label class="nf-evt-chip"><input type="radio" name="evtType"
-              value="Bachelorette"><span>Bachelorette</span></label>
+              value="Bachelorette"><span>Wieczór Panieński</span></label>
           <label class="nf-evt-chip"><input type="radio" name="evtType" value="Birthday"><span>Birthday
               Party</span></label>
           <label class="nf-evt-chip"><input type="radio" name="evtType" value="Corporate Wellness"><span>Corporate
               Wellness</span></label>
           <label class="nf-evt-chip"><input type="radio" name="evtType" value="Girls' Night"><span>Girls'
               Night</span></label>
-          <label class="nf-evt-chip"><input type="radio" name="evtType" value="Other"><span>Other</span></label>
+          <label class="nf-evt-chip"><input type="radio" name="evtType" value="Other"><span>Inne</span></label>
         </div>
       </div>
       <div class="nf-mfield-row">
@@ -10151,18 +10128,18 @@ If you learn the visitor's name during conversation, address them personally. Al
         if (!inp || !res) return;
         const code = inp.value.trim().toUpperCase();
         if (!code) { res.className = 'nf-promo-result'; res.textContent = ''; inp.style.color = ''; return; }
-        res.className = 'nf-promo-result chk'; res.textContent = 'Validating…';
+        res.className = 'nf-promo-result chk'; res.textContent = 'Weryfikowanie…';
         if (btn) btn.disabled = true;
         if (lbl) lbl.textContent = '…';
         const promos = await loadPromos();
         if (btn) btn.disabled = false;
-        if (lbl) lbl.textContent = 'Apply';
+        if (lbl) lbl.textContent = 'Zastosuj';
         if (window.appliedPromoCode && window.appliedPromoCode !== code) {
           res.className = 'nf-promo-result err';
           res.textContent = `✗ Only one promo code can be applied. Remove ${window.appliedPromoCode} first.`;
           inp.style.color = '#e08080';
           if (btn) btn.disabled = false;
-          if (lbl) lbl.textContent = 'Apply';
+          if (lbl) lbl.textContent = 'Zastosuj';
           return;
         }
         if (window.appliedPromoCode === code) {
@@ -10170,7 +10147,7 @@ If you learn the visitor's name during conversation, address them personally. Al
           res.textContent = '✗ This promo code is already applied.';
           inp.style.color = '#e08080';
           if (btn) btn.disabled = false;
-          if (lbl) lbl.textContent = 'Apply';
+          if (lbl) lbl.textContent = 'Zastosuj';
           return;
         }
 
@@ -10243,16 +10220,16 @@ If you learn the visitor's name during conversation, address them personally. Al
         const el = document.getElementById('nfReferCount');
         if (!el) return;
         const sb = getSB();
-        if (!sb) { el.textContent = 'Join our referral programme today.'; return; }
+        if (!sb) { el.textContent = 'Dołącz do naszego programu poleceń już dziś.'; return; }
         try {
           const { count } = await sb
             .from('consultations')
             .select('*', { count: 'exact', head: true })
             .eq('referral', 'Referral Programme');
           el.textContent = count > 0
-            ? `${count} client${count === 1 ? '' : 's'} referred — join them.`
-            : 'Be the first to refer a friend!';
-        } catch (e) { el.textContent = 'Join our referral programme today.'; }
+            ? `${count} client${count === 1 ? '' : 's'} poleceń — dołącz do nich.`
+            : 'Bądź pierwszą, która poleci przyjaciela!';
+        } catch (e) { el.textContent = 'Dołącz do naszego programu poleceń już dziś.'; }
       }
 
       /* ───── EVENTS MODAL ───── */
@@ -10481,7 +10458,7 @@ If you learn the visitor's name during conversation, address them personally. Al
     <!-- Toggle tab -->
     <button class="dw-tab" id="dwTab" onclick="toggleDiscount()" aria-label="Unlock discount">
       <span class="dw-tab-icon">✦</span>
-      <span class="dw-tab-text">PROMO DISCOUNT</span>
+      <span class="dw-tab-text">KOD RABATOWY</span>
     </button>
 
     <!-- Panel -->
@@ -10496,16 +10473,16 @@ If you learn the visitor's name during conversation, address them personally. Al
 
       <!-- Header -->
       <div class="dw-header">
-        <div class="dw-eyebrow">Exclusive Offer</div>
-        <h3 class="dw-title">Unlock Your<br><em>Discount</em></h3>
-        <p class="dw-sub">Apply a promo code or let our assistant check your eligibility for new client savings.</p>
+        <div class="dw-eyebrow">Ekskluzywna Oferta</div>
+        <h3 class="dw-title">Odblokuj Swój<br><em>Rabat</em></h3>
+        <p class="dw-sub">Wprowadź kod promocyjny lub pozwól naszemu asystentowi sprawdzić Twoją kwalifikowalność do zniżki dla nowych klientek.</p>
       </div>
 
       <!-- Code input section -->
       <div class="dw-code-section" id="dwCodeSection">
-        <label class="dw-label">Promo Code</label>
+        <label class="dw-label">Kod Promocyjny</label>
         <div class="dw-input-row">
-          <input type="text" id="dwCodeInput" class="dw-input" placeholder="Enter code (e.g. FINESSE15)" maxlength="20"
+          <input type="text" id="dwCodeInput" class="dw-input" placeholder="Wprowadź kod (np. FINESSE15)" maxlength="20"
             autocomplete="off">
           <button class="dw-apply-btn" id="dwApplyBtn" onclick="applyDiscountCode()">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -10520,7 +10497,7 @@ If you learn the visitor's name during conversation, address them personally. Al
       <!-- Divider -->
       <div class="dw-divider">
         <div class="dw-div-line"></div>
-        <span class="dw-div-text">or</span>
+        <span class="dw-div-text">lub</span>
         <div class="dw-div-line"></div>
       </div>
 
@@ -10528,17 +10505,17 @@ If you learn the visitor's name during conversation, address them personally. Al
       <div class="dw-chat-section">
         <div class="dw-chat-label">
           <span class="dw-chat-dot"></span>
-          Ask our AI assistant
+          Zapytaj naszego asystenta AI
         </div>
         <div class="dw-messages" id="dwMessages">
           <div class="dw-msg dw-msg-bot">
             <div class="dw-msg-avatar">✦</div>
-            <div class="dw-msg-bubble">Hi! I can check if you qualify for a new client discount or answer any questions
-              about our offers. What would you like to know?</div>
+            <div class="dw-msg-bubble">Cześć! Mogę sprawdzić, czy kwalifikujesz się do zniżki dla nowych klientek lub odpowiedzieć na pytania
+              dotyczące naszych ofert. Co chciałabyś wiedzieć?</div>
           </div>
         </div>
         <div class="dw-input-wrap">
-          <input type="text" id="dwChatInput" class="dw-chat-input" placeholder="Ask about discounts…"
+          <input type="text" id="dwChatInput" class="dw-chat-input" placeholder="Zapytaj o rabaty…"
             onkeydown="if(event.key==='Enter')sendDwMessage()">
           <button class="dw-send-btn" onclick="sendDwMessage()">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -10548,15 +10525,15 @@ If you learn the visitor's name during conversation, address them personally. Al
           </button>
         </div>
         <div class="dw-quick-btns">
-          <button class="dw-quick-btn" onclick="sendDwQuick(this)">New client offer?</button>
-          <button class="dw-quick-btn" onclick="sendDwQuick(this)">What codes are available?</button>
-          <button class="dw-quick-btn" onclick="sendDwQuick(this)">Refer a friend?</button>
+          <button class="dw-quick-btn" onclick="sendDwQuick(this)">Oferta dla nowych klientek?</button>
+          <button class="dw-quick-btn" onclick="sendDwQuick(this)">Jakie kody są dostępne?</button>
+          <button class="dw-quick-btn" onclick="sendDwQuick(this)">Poleć przyjaciela?</button>
         </div>
         <button onclick="clearDwHistory()"
           style="width:100%;margin-top:10px;padding:8px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);color:rgba(201,169,110,.6);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s;"
           onmouseover="this.style.background='rgba(201,169,110,.12)';this.style.color='rgba(201,169,110,.8)'"
-          onmouseout="this.style.background='rgba(201,169,110,.08)';this.style.color='rgba(201,169,110,.6)'">Clear
-          Chat</button>
+          onmouseout="this.style.background='rgba(201,169,110,.08)';this.style.color='rgba(201,169,110,.6)'">Wyczyść
+          Czat</button>
       </div>
 
       <!-- Bottom edge -->
@@ -11161,6 +11138,18 @@ If you learn the visitor's name during conversation, address them personally. Al
     }
   </style>
 
+  <style>
+    .nav-settings-icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px !important;
+      opacity: 0.7;
+      transition: opacity 0.2s, transform 0.3s;
+    }
+    .nav-settings-icon-btn:hover { opacity: 1; transform: rotate(30deg); }
+  </style>
+
   <script>
     // ── Discount Widget Logic ──
     let dwOpen = false;
@@ -11207,12 +11196,12 @@ If you learn the visitor's name during conversation, address them personally. Al
 
       if (!code) {
         result.className = 'dw-result info';
-        result.textContent = 'Please enter a promo code.';
+        result.textContent = 'Proszę wprowadzić kod promocyjny.';
         return;
       }
 
       result.className = 'dw-result info';
-      result.textContent = 'Checking code…';
+      result.textContent = 'Sprawdzanie kodu…';
 
       setTimeout(() => {
         const promo = cachedPromoCodes?.find(p => p.code === code);
@@ -11222,7 +11211,7 @@ If you learn the visitor's name during conversation, address them personally. Al
           input.style.borderColor = 'rgba(123,201,154,.45)';
         } else {
           result.className = 'dw-result error';
-          result.textContent = '✗ Code not recognised. Try asking our assistant below for current offers.';
+          result.textContent = '✗ Kod nierozpoznany. Zapytaj naszego asystenta poniżej o aktualne oferty.';
         }
       }, 700);
     }
@@ -11250,7 +11239,7 @@ If you learn the visitor's name during conversation, address them personally. Al
       if (dwChatHistory.length === 0) {
         msgs.innerHTML = `<div class="dw-msg dw-msg-bot">
       <div class="dw-msg-avatar">✦</div>
-      <div class="dw-msg-bubble">Hi! I can check if you qualify for a new client discount or answer any questions about our offers. What would you like to know?</div>
+      <div class="dw-msg-bubble">Cześć! Mogę sprawdzić, czy kwalifikujesz się do zniżki dla nowych klientek lub odpowiedzieć na pytania dotyczące naszych ofert. Co chciałabyś wiedzieć?</div>
     </div>`;
         return;
       }
@@ -11354,293 +11343,6 @@ If you learn the visitor's name during conversation, address them personally. Al
 
     document.getElementById('dwCodeInput').addEventListener('keydown', function (e) {
       if (e.key === 'Enter') applyDiscountCode();
-    });
-  </script>
-
-  <!-- ══ Coming Soon Modal ══ -->
-  <style>
-    /* ── Settings gear icon button ── */
-    .nav-settings-icon-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px !important;
-      opacity: 0.7;
-      transition: opacity 0.2s, transform 0.3s;
-    }
-    .nav-settings-icon-btn:hover { opacity: 1; transform: rotate(30deg); }
-
-    /* ── Coming Soon Modal Overlay ── */
-    #comingSoonModal {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-    #comingSoonModal.cs-open {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .cs-panel {
-      position: relative;
-      background: #0c0906;
-      border: 1px solid rgba(201,169,110,0.18);
-      border-radius: 2px;
-      padding: 52px 44px 44px;
-      max-width: 600px;
-      width: calc(100% - 40px);
-      text-align: center;
-      box-shadow: 0 40px 120px rgba(0,0,0,0.7), inset 0 0 80px rgba(201,169,110,0.02);
-      transform: translateY(20px) scale(0.97);
-      transition: transform 0.45s cubic-bezier(.22,1,.36,1);
-    }
-    #comingSoonModal.cs-open .cs-panel {
-      transform: translateY(0) scale(1);
-    }
-    /* Corner accents */
-    .cs-corner {
-      position: absolute;
-      width: 32px; height: 32px;
-    }
-    .cs-corner.tl { top: 14px; left: 14px; border-top: 1px solid #c9a96e; border-left: 1px solid #c9a96e; }
-    .cs-corner.tr { top: 14px; right: 14px; border-top: 1px solid #c9a96e; border-right: 1px solid #c9a96e; }
-    .cs-corner.bl { bottom: 14px; left: 14px; border-bottom: 1px solid #c9a96e; border-left: 1px solid #c9a96e; }
-    .cs-corner.br { bottom: 14px; right: 14px; border-bottom: 1px solid #c9a96e; border-right: 1px solid #c9a96e; }
-    /* Close btn */
-    .cs-close {
-      position: absolute;
-      top: 16px; right: 16px;
-      background: none;
-      border: none;
-      color: rgba(201,169,110,0.45);
-      cursor: pointer;
-      padding: 6px;
-      line-height: 1;
-      transition: color 0.2s;
-    }
-    .cs-close:hover { color: #c9a96e; }
-    /* Logo */
-    .cs-logo { width: 80px; height: 80px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(201,169,110,0.3)); margin-bottom: 16px; }
-    /* Ornament */
-    .cs-orn { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 16px 0 18px; }
-    .cs-orn-line { height: 1px; width: 50px; background: linear-gradient(90deg, transparent, #c9a96e); }
-    .cs-orn-line.r { background: linear-gradient(90deg, #c9a96e, transparent); }
-    .cs-orn-dot { width: 4px; height: 4px; border-radius: 50%; background: #c9a96e; box-shadow: 0 0 5px #c9a96e; }
-    .cs-orn-dia { width: 5px; height: 5px; background: #c9a96e; transform: rotate(45deg); box-shadow: 0 0 7px #c9a96e; }
-    /* Text */
-    .cs-eyebrow {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 5px;
-      color: #9a7a4a;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .cs-headline {
-      font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
-      font-weight: 300;
-      font-size: clamp(32px, 6vw, 52px);
-      line-height: 1.1;
-      color: #e8d5b0;
-      margin-bottom: 6px;
-    }
-    .cs-headline em { font-style: italic; color: #c9a96e; }
-    .cs-year {
-      font-family: 'Cinzel', serif;
-      font-size: 13px;
-      letter-spacing: 14px;
-      color: rgba(201,169,110,0.45);
-      margin-bottom: 16px;
-    }
-    .cs-body {
-      font-family: 'Jost', 'EB Garamond', sans-serif;
-      font-weight: 300;
-      font-size: 13px;
-      line-height: 1.9;
-      letter-spacing: 0.04em;
-      color: rgba(232,213,176,0.55);
-      max-width: 400px;
-      margin: 0 auto 28px;
-    }
-    /* Countdown */
-    .cs-countdown {
-      display: flex;
-      gap: clamp(12px, 4vw, 32px);
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-    .cs-cd-unit { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-    .cs-cd-num {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 300;
-      font-size: clamp(26px, 5vw, 42px);
-      color: #c9a96e;
-      line-height: 1;
-      text-shadow: 0 0 20px rgba(201,169,110,0.2);
-    }
-    .cs-cd-label {
-      font-family: 'Cinzel', serif;
-      font-size: 7px;
-      letter-spacing: 2px;
-      color: rgba(201,169,110,0.35);
-      text-transform: uppercase;
-    }
-    .cs-cd-sep {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 4vw, 36px);
-      color: rgba(201,169,110,0.2);
-      align-self: flex-start;
-      margin-top: 4px;
-    }
-    /* Notify */
-    .cs-notify-label {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 3px;
-      color: rgba(201,169,110,0.45);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .cs-notify-field {
-      display: flex;
-      border: 1px solid rgba(201,169,110,0.22);
-      background: rgba(201,169,110,0.04);
-      border-radius: 1px;
-      overflow: hidden;
-      max-width: 360px;
-      margin: 0 auto 8px;
-    }
-    .cs-notify-field input {
-      flex: 1;
-      background: none;
-      border: none;
-      outline: none;
-      color: #e8d5b0;
-      font-family: 'Jost', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      padding: 11px 14px;
-    }
-    .cs-notify-field input::placeholder { color: rgba(201,169,110,0.3); }
-    .cs-notify-field button {
-      background: linear-gradient(135deg, #9a7a4a, #c9a96e);
-      border: none;
-      color: #000;
-      font-family: 'Cinzel', serif;
-      font-size: 8px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 0 18px;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      white-space: nowrap;
-    }
-    .cs-notify-field button:hover { opacity: 0.85; }
-    .cs-notify-msg {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.05em;
-      color: rgba(201,169,110,0.55);
-      min-height: 18px;
-    }
-    @media (max-width: 480px) {
-      .cs-panel { padding: 44px 24px 36px; }
-      .cs-countdown { gap: 10px; }
-    }
-  </style>
-
-  <div id="comingSoonModal" role="dialog" aria-modal="true" aria-label="Booking Coming Soon" onclick="if(event.target===this)closeComingSoonModal()">
-    <div class="cs-panel">
-      <div class="cs-corner tl"></div>
-      <div class="cs-corner tr"></div>
-      <div class="cs-corner bl"></div>
-      <div class="cs-corner br"></div>
-      <button class="cs-close" onclick="closeComingSoonModal()" aria-label="Close">
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <img src="images/Finesse Logo.png" class="cs-logo" alt="Lifestyle Medical Spa" />
-      <div class="cs-orn">
-        <div class="cs-orn-line"></div>
-        <div class="cs-orn-dot"></div>
-        <div class="cs-orn-dia"></div>
-        <div class="cs-orn-dot"></div>
-        <div class="cs-orn-line r"></div>
-      </div>
-      <p class="cs-eyebrow">Lifestyle Medical Spa</p>
-      <h2 class="cs-headline">Something <em>Beautiful</em><br>is Coming</h2>
-      <p class="cs-year">◆ &nbsp; 2 0 2 7 &nbsp; ◆</p>
-      <p class="cs-body">Our online booking experience is being crafted with the same precision as our treatments. An elevated journey—refined and ready—arrives soon.</p>
-      <div class="cs-countdown">
-        <div class="cs-cd-unit"><span class="cs-cd-num" id="cs-cd-d">000</span><span class="cs-cd-label">Days</span></div>
-        <div class="cs-cd-sep">:</div>
-        <div class="cs-cd-unit"><span class="cs-cd-num" id="cs-cd-h">00</span><span class="cs-cd-label">Hours</span></div>
-        <div class="cs-cd-sep">:</div>
-        <div class="cs-cd-unit"><span class="cs-cd-num" id="cs-cd-m">00</span><span class="cs-cd-label">Minutes</span></div>
-        <div class="cs-cd-sep">:</div>
-        <div class="cs-cd-unit"><span class="cs-cd-num" id="cs-cd-s">00</span><span class="cs-cd-label">Seconds</span></div>
-      </div>
-      <p class="cs-notify-label">Be the first to book</p>
-      <div class="cs-notify-field">
-        <input type="email" id="csEmailInput" placeholder="Your email address" autocomplete="email" />
-        <button onclick="handleCsNotify()">Notify Me</button>
-      </div>
-      <p class="cs-notify-msg" id="csNotifyMsg"></p>
-    </div>
-  </div>
-
-  <script>
-    // ── Coming Soon Modal ──
-    function openComingSoonModal() {
-      document.getElementById('comingSoonModal').classList.add('cs-open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeComingSoonModal() {
-      document.getElementById('comingSoonModal').classList.remove('cs-open');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeComingSoonModal();
-    });
-
-    // ── Countdown ──
-    (function() {
-      const target = new Date('2027-01-01T00:00:00');
-      function pad(n, len) { return String(n).padStart(len || 2, '0'); }
-      function csTick() {
-        const diff = Math.max(0, target - Date.now());
-        document.getElementById('cs-cd-d').textContent = pad(Math.floor(diff / 864e5), 3);
-        document.getElementById('cs-cd-h').textContent = pad(Math.floor((diff % 864e5) / 36e5));
-        document.getElementById('cs-cd-m').textContent = pad(Math.floor((diff % 36e5) / 6e4));
-        document.getElementById('cs-cd-s').textContent = pad(Math.floor((diff % 6e4) / 1e3));
-      }
-      csTick();
-      setInterval(csTick, 1000);
-    })();
-
-    // ── Notify ──
-    function handleCsNotify() {
-      const input = document.getElementById('csEmailInput');
-      const msg = document.getElementById('csNotifyMsg');
-      const email = input.value.trim();
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        msg.style.color = 'rgba(176,91,110,.7)';
-        msg.textContent = 'Please enter a valid email address.';
-        return;
-      }
-      msg.style.color = 'rgba(201,169,110,.6)';
-      msg.textContent = '✦  You will be among the first to book.';
-      input.value = '';
-    }
-    document.getElementById('csEmailInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') handleCsNotify();
     });
   </script>
 

@@ -1,0 +1,71 @@
+/* ══════════════════════════════════════════════════
+   MOBILE HEADER FIX
+   Add this file as the LAST stylesheet in <head>
+   ══════════════════════════════════════════════════ */
+
+/* ── 1. Hide desktop-only nav items on mobile ── */
+@media (max-width: 768px) {
+  /* Hide Book Now button and desktop nav links */
+  .nav-links,
+  .nav-book {
+    display: none !important;
+  }
+
+  /* Hide the account avatar button from the top nav bar —
+     Sign In lives in the sidebar instead */
+  .nav-account-avatar {
+    display: none !important;
+  }
+
+  /* Ensure .nav-r has no extra gap that pushes elements */
+  .nav-r {
+    gap: 4px !important;
+    align-items: center;
+  }
+}
+
+/* ── 2. Fix the mobile sidebar drawer ── */
+
+/* Make the sidebar a true full-height right drawer
+   starting just below the nav bar (64px / 60px when scrolled) */
+.mob {
+  /* Remove the hardcoded broken values */
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100dvh !important;   /* full viewport height */
+  /* keep everything else the same */
+  padding-top: max(64px, calc(64px + env(safe-area-inset-top, 0px))) !important;
+}
+
+/* When nav is scrolled (compact), shift content down by nav height */
+/* The nav collapses to 60px when scrolled so padding adjusts slightly */
+
+/* ── 3. Ensure the mob-bottom buttons are properly spaced ── */
+.mob-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+  border-top: 1px solid rgba(201, 169, 110, .12);
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Sign In / Profile button — ghost gold style */
+.mob-book.mob-account {
+  background: transparent !important;
+  border: 1px solid rgba(201, 169, 110, .45) !important;
+  color: rgba(220, 190, 140, .9) !important;
+  box-shadow: none !important;
+}
+
+.mob-book.mob-account:active {
+  background: rgba(201, 169, 110, .1) !important;
+}
+
+/* Book a Consultation button — stays gold filled */
+.mob-book:not(.mob-account) {
+  background: linear-gradient(100deg, #9e7d47 0%, #c9a96e 55%, #9e7d47 100%) !important;
+  background-size: 200% 100% !important;
+  color: white !important;
+}
